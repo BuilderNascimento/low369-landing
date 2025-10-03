@@ -336,7 +336,7 @@ export default function Home() {
                   <div className="relative inline-block">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 rounded-full blur-md opacity-75 animate-pulse"></div>
                     <a
-                      href="https://www.low369.com.br"
+                      href="https://reserva.ink/low369"
           target="_blank"
           rel="noopener noreferrer"
                       className="relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white px-8 py-4 text-base sm:text-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-blue-500/50 group overflow-hidden"
@@ -546,34 +546,20 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Controles Mobile Otimizados */}
-                <div className="mt-6 sm:mt-8 flex items-center justify-center gap-4 sm:gap-6 w-full max-w-sm sm:max-w-lg lg:max-w-2xl">
-                  <button 
-                    onClick={onPrev} 
-                    className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 rounded-xl sm:rounded-2xl bg-orange-500 text-white hover:bg-orange-600 transition-colors shadow-lg text-sm sm:text-base lg:text-lg flex items-center justify-center"
-                  >
-                    ◀
-                  </button>
-                  <div className="flex gap-1.5 sm:gap-2">
+                {/* Indicadores - Apenas visualização */}
+                <div className="mt-6 sm:mt-8 flex items-center justify-center w-full">
+                  <div className="flex gap-2 sm:gap-3">
                     {Array.from({ length: totalPages }).map((_, i) => (
-                      <button
+                      <div
                         key={i}
-                        aria-label={`Ir para slide ${i + 1}`}
-                        onClick={() => scrollTo(i)}
                         className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full transition-all duration-300 ${
                           i === page 
-                            ? "bg-orange-500 shadow-lg" 
-                            : "bg-white/70 hover:bg-white/90"
+                            ? "bg-orange-500 shadow-lg w-8 sm:w-10" 
+                            : "bg-white/70"
                         }`}
                       />
                     ))}
                   </div>
-                  <button 
-                    onClick={onNext} 
-                    className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 rounded-xl sm:rounded-2xl bg-orange-500 text-white hover:bg-orange-600 transition-colors shadow-lg text-sm sm:text-base lg:text-lg flex items-center justify-center"
-                  >
-                    ▶
-                  </button>
                 </div>
               </div>
             </div>
