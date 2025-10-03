@@ -816,19 +816,32 @@ export default function Home() {
             <div className="relative">
               <form
                 className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border border-orange-200/50"
-                onSubmit={(e) => {
+onSubmit={(e) => {
                   e.preventDefault();
                   const form = e.currentTarget as HTMLFormElement;
                   const data = new FormData(form);
                   const nome = String(data.get('nome') || '');
                   const email = String(data.get('email') || '');
                   const whatsapp = String(data.get('whatsapp') || '');
-                  const canal = String(data.get('canal') || '');
+                  const cidade = String(data.get('cidade') || '');
+                  const estado = String(data.get('estado') || '');
+                  const rede1 = String(data.get('rede1') || '');
+                  const link1 = String(data.get('link1') || '');
+                  const rede2 = String(data.get('rede2') || '');
+                  const link2 = String(data.get('link2') || '');
+                  const rede3 = String(data.get('rede3') || '');
+                  const link3 = String(data.get('link3') || '');
                   const audiencia = String(data.get('audiencia') || '');
                   const nicho = String(data.get('nicho') || '');
+                  
+                  let redesText = '';
+                  if (rede1 && link1) redesText += `\n${rede1}: ${link1}`;
+                  if (rede2 && link2) redesText += `\n${rede2}: ${link2}`;
+                  if (rede3 && link3) redesText += `\n${rede3}: ${link3}`;
+                  
                   const assunto = encodeURIComponent(`Cadastro Parceiro - ${nome}`);
                   const corpo = encodeURIComponent(
-                    `Nome: ${nome}\nE-mail: ${email}\nWhatsApp: ${whatsapp}\nCanal/Perfil: ${canal}\nAudiência: ${audiencia}\nNicho: ${nicho}`
+                    `Nome: ${nome}\nE-mail: ${email}\nWhatsApp: ${whatsapp}\nCidade: ${cidade}\nEstado: ${estado}\n\nREDES SOCIAIS:${redesText}\n\nAudiência: ${audiencia}\nNicho: ${nicho}`
                   );
                   window.location.href = `mailto:contato_low369@hotmail.com?subject=${assunto}&body=${corpo}`;
                 }}
@@ -874,16 +887,120 @@ export default function Home() {
                         className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-green-400 focus:bg-white focus:ring-4 focus:ring-green-400/20 transition-all duration-300" 
                       />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-gray-700 flex items-center gap-2" htmlFor="canal">
-                        <span className="text-purple-500">🔗</span> Link do canal/perfil
-                      </label>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700 flex items-center gap-2" htmlFor="cidade">
+                          <span className="text-blue-500">🏙️</span> Cidade
+                        </label>
+                        <input 
+                          id="cidade" 
+                          name="cidade" 
+                          placeholder="Sua cidade" 
+                          required 
+                          className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-400/20 transition-all duration-300" 
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700 flex items-center gap-2" htmlFor="estado">
+                          <span className="text-indigo-500">📍</span> Estado
+                        </label>
+                        <select 
+                          id="estado" 
+                          name="estado" 
+                          required 
+                          className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium focus:border-indigo-400 focus:bg-white focus:ring-4 focus:ring-indigo-400/20 transition-all duration-300"
+                        >
+                          <option value="">UF</option>
+                          <option value="AC">AC</option>
+                          <option value="AL">AL</option>
+                          <option value="AP">AP</option>
+                          <option value="AM">AM</option>
+                          <option value="BA">BA</option>
+                          <option value="CE">CE</option>
+                          <option value="DF">DF</option>
+                          <option value="ES">ES</option>
+                          <option value="GO">GO</option>
+                          <option value="MA">MA</option>
+                          <option value="MT">MT</option>
+                          <option value="MS">MS</option>
+                          <option value="MG">MG</option>
+                          <option value="PA">PA</option>
+                          <option value="PB">PB</option>
+                          <option value="PR">PR</option>
+                          <option value="PE">PE</option>
+                          <option value="PI">PI</option>
+                          <option value="RJ">RJ</option>
+                          <option value="RN">RN</option>
+                          <option value="RS">RS</option>
+                          <option value="RO">RO</option>
+                          <option value="RR">RR</option>
+                          <option value="SC">SC</option>
+                          <option value="SP">SP</option>
+                          <option value="SE">SE</option>
+                          <option value="TO">TO</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Redes Sociais */}
+                  <div className="space-y-4 bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border-2 border-purple-200">
+                    <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2">
+                      <span className="text-purple-600">📱</span> Suas Redes Sociais
+                      <span className="text-xs font-normal text-gray-500">(escolha de 1 a 3)</span>
+                    </h3>
+                    
+                    {/* Rede Social 1 */}
+                    <div className="grid grid-cols-3 gap-3">
+                      <select 
+                        name="rede1" 
+                        className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                      >
+                        <option value="">Selecione</option>
+                        <option value="Instagram">📸 Instagram</option>
+                        <option value="Facebook">👥 Facebook</option>
+                        <option value="TikTok">🎵 TikTok</option>
+                      </select>
                       <input 
-                        id="canal" 
-                        name="canal" 
-                        placeholder="@seuperfil ou URL completa" 
-                        required 
-                        className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        name="link1" 
+                        placeholder="@seuperfil ou URL" 
+                        className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                      />
+                    </div>
+                    
+                    {/* Rede Social 2 */}
+                    <div className="grid grid-cols-3 gap-3">
+                      <select 
+                        name="rede2" 
+                        className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                      >
+                        <option value="">Selecione</option>
+                        <option value="Instagram">📸 Instagram</option>
+                        <option value="Facebook">👥 Facebook</option>
+                        <option value="TikTok">🎵 TikTok</option>
+                      </select>
+                      <input 
+                        name="link2" 
+                        placeholder="@seuperfil ou URL" 
+                        className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                      />
+                    </div>
+                    
+                    {/* Rede Social 3 */}
+                    <div className="grid grid-cols-3 gap-3">
+                      <select 
+                        name="rede3" 
+                        className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                      >
+                        <option value="">Selecione</option>
+                        <option value="Instagram">📸 Instagram</option>
+                        <option value="Facebook">👥 Facebook</option>
+                        <option value="TikTok">🎵 TikTok</option>
+                      </select>
+                      <input 
+                        name="link3" 
+                        placeholder="@seuperfil ou URL" 
+                        className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
                       />
                     </div>
                   </div>
