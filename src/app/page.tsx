@@ -246,7 +246,7 @@ export default function Home() {
                   
                   <h1 className="relative text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight">
                     <span className="block bg-gradient-to-r from-green-400 via-emerald-300 to-green-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite] text-3xl sm:text-4xl lg:text-5xl">
-                      ZERO investimento.
+                      ZERO Investimento.
                     </span>
                     <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite_0.5s] mt-2">
                       LUCRO de verdade.
@@ -258,16 +258,15 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <p className="text-xl sm:text-2xl text-white/90 font-semibold mb-6 animate-[fadeInUp_1s_ease-out_0.7s_both]">
-                  <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">
-                    Comece hoje mesmo, com investimento ZERO.
+                <p className="text-xl sm:text-2xl font-semibold mb-6 animate-[fadeInUp_1s_ease-out_0.7s_both]">
+                  <span className="text-white font-black">
+                    COMECE HOJE MESMO, com investimento ZERO.
                   </span>
                 </p>
                 
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-6 animate-[fadeInUp_1s_ease-out_0.8s_both]">
-                  Use sua influência para 
-                  <span className="text-orange-400 font-bold"> monetizar seu alcance </span>
-                  e ajudar sua audiência a comprar com confiança.
+                  Use sua influência nas redes para 
+                  <span className="text-orange-400 font-bold">monetizar seu ALCANCE</span> e ajudar sua audiência a comprar com confiança.
                 </p>
                 
                 <p className="text-sm sm:text-base text-white/60 mb-8 animate-[fadeInUp_1s_ease-out_1.2s_both]">
