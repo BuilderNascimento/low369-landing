@@ -933,6 +933,26 @@ export default function Home() {
         {/* FAQ */}
         <section id="faq" className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent" />
+          
+          {/* Partículas flutuantes laranja - APENAS NO DESKTOP */}
+          <div className="absolute inset-0 overflow-hidden hidden lg:block">
+            {/* Lado esquerdo */}
+            <div className="absolute w-5 h-5 bg-orange-400/70 rounded-full animate-[float_6s_ease-in-out_infinite] top-24 left-[4%]" />
+            <div className="absolute w-3 h-3 bg-yellow-400/80 rounded-full animate-[float_7s_ease-in-out_infinite_1s] top-48 left-[7%]" />
+            <div className="absolute w-7 h-7 bg-orange-300/50 rounded-full animate-[float_8s_ease-in-out_infinite_2s] top-72 left-[2%]" />
+            <div className="absolute w-4 h-4 bg-orange-500/60 rounded-full animate-[float_5s_ease-in-out_infinite_3s] bottom-48 left-[5%]" />
+            <div className="absolute w-6 h-6 bg-yellow-300/70 rounded-full animate-[float_9s_ease-in-out_infinite_1.5s] bottom-24 left-[3%]" />
+            <div className="absolute w-2 h-2 bg-orange-400/60 rounded-full animate-[float_6s_ease-in-out_infinite_2.5s] top-96 left-[6%]" />
+            
+            {/* Lado direito */}
+            <div className="absolute w-5 h-5 bg-orange-400/70 rounded-full animate-[float_7s_ease-in-out_infinite_0.5s] top-24 right-[4%]" />
+            <div className="absolute w-4 h-4 bg-yellow-400/80 rounded-full animate-[float_6s_ease-in-out_infinite_2s] top-48 right-[7%]" />
+            <div className="absolute w-6 h-6 bg-orange-300/60 rounded-full animate-[float_9s_ease-in-out_infinite] top-72 right-[2%]" />
+            <div className="absolute w-3 h-3 bg-orange-500/70 rounded-full animate-[float_5s_ease-in-out_infinite_2.5s] bottom-48 right-[5%]" />
+            <div className="absolute w-5 h-5 bg-yellow-300/60 rounded-full animate-[float_8s_ease-in-out_infinite_1s] bottom-24 right-[3%]" />
+            <div className="absolute w-2 h-2 bg-orange-400/50 rounded-full animate-[float_7s_ease-in-out_infinite_3s] top-96 right-[6%]" />
+          </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 grid gap-16">
             <div className="text-center relative">
@@ -951,19 +971,24 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="grid gap-6 max-w-4xl mx-auto">
+            <div className="grid gap-6 max-w-4xl lg:max-w-6xl mx-auto w-full">
               {[
                 { q: "Quanto ganho por venda?", a: "Pagamos comissão por cada venda gerada com seu link/cupom." },
                 { q: "Quando recebo?", a: "Pagamentos mensais conforme regulamento enviado após aprovação." },
                 { q: "Quem pode participar?", a: "Criadores com presença ativa em redes sociais, blogs ou portais." },
                 { q: "Preciso pagar algo?", a: "Não. A participação é 100% gratuita." },
               ].map((f, i) => (
-                <details key={i} className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-                  <summary className="cursor-pointer p-6 lg:p-8 text-lg lg:text-xl font-bold text-gray-900 hover:bg-gray-50">
-                    {f.q}
+                <details 
+                  key={i} 
+                  className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:scale-[1.02] hover:border-orange-200"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  <summary className="cursor-pointer p-6 lg:p-10 text-lg lg:text-2xl font-bold text-gray-900 hover:bg-gradient-to-r hover:from-orange-50 hover:to-yellow-50 transition-all duration-300 flex items-center justify-between">
+                    <span>{f.q}</span>
+                    <span className="text-orange-500 text-2xl lg:text-3xl">→</span>
                   </summary>
-                  <div className="px-6 lg:px-8 pb-6 lg:pb-8">
-                    <p className="text-gray-600 leading-relaxed text-base lg:text-lg">
+                  <div className="px-6 lg:px-10 pb-6 lg:pb-10 bg-gradient-to-br from-gray-50 to-orange-50/30">
+                    <p className="text-gray-700 leading-relaxed text-base lg:text-xl font-medium">
                       {f.a}
                     </p>
                   </div>
