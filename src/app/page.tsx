@@ -384,7 +384,7 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
               <div className="mb-8">
                 <label className="block text-white font-semibold mb-4 text-lg">
-                  Quantos seguidores você tem?
+                  Quantas visualizações seu CUPOM terá?
                 </label>
                 <input
                   type="range"
@@ -400,7 +400,7 @@ export default function Home() {
                 />
                 <div className="flex justify-between text-purple-200 text-sm mt-2">
                   <span>1k</span>
-                  <span className="text-white font-bold text-2xl">{(followers / 1000).toFixed(0)}k seguidores</span>
+                  <span className="text-white font-bold text-2xl">{(followers / 1000).toFixed(0)}k visualizações</span>
                   <span>100k</span>
                 </div>
               </div>
