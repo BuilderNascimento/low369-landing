@@ -63,6 +63,19 @@ export default function Home() {
     if (current !== page) setPage(current);
   };
 
+  // Autoplay do carrossel - avança automaticamente a cada 4 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPage((currentPage) => {
+        const nextPage = (currentPage + 1) % totalPages;
+        scrollTo(nextPage);
+        return nextPage;
+      });
+    }, 4000); // Muda a cada 4 segundos
+
+    return () => clearInterval(interval);
+  }, [totalPages]);
+
   return (
     <>
       <style jsx global>{`
