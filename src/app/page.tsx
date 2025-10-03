@@ -212,7 +212,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Benefícios - com imagem de fundo */}
+        {/* Benefícios - com imagem de fundo - VERSÃO MOBILE OTIMIZADA */}
         <section 
           className="w-full relative overflow-hidden"
           style={{
@@ -223,35 +223,41 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-black/40" />
-          <div id="beneficios" className="relative z-10 mx-auto max-w-7xl px-6 py-20 grid gap-12">
-            <div className="text-center relative">
+          <div id="beneficios" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+            
+            {/* Título - Mobile First */}
+            <div className="text-center relative mb-8 sm:mb-12">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/30 to-transparent blur-2xl animate-pulse" />
               
-              <h2 className="relative text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              <h2 className="relative text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight">
                 <span className="block bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite] leading-tight">
                   Por que se tornar
                 </span>
-                <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite_0.3s] leading-tight mt-2">
+                <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite_0.3s] leading-tight mt-1 sm:mt-2">
                   um parceiro?
                 </span>
               </h2>
               
-              <p className="mt-4 text-lg sm:text-xl text-white/80 font-medium animate-[fadeInUp_1s_ease-out_0.8s_both]">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg lg:text-xl text-white/80 font-medium animate-[fadeInUp_1s_ease-out_0.8s_both] px-4">
                 Descubra as vantagens exclusivas que vão transformar sua influência em renda
               </p>
               
-              <div className="flex justify-center mt-6">
-                <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
+              <div className="flex justify-center mt-4 sm:mt-6">
+                <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
               </div>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="flex items-center justify-center lg:justify-start">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-orange-600/30 via-yellow-500/20 to-orange-600/30 rounded-3xl blur-xl animate-pulse" />
+            {/* Layout Mobile First */}
+            <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center">
+              
+              {/* Seção LOW 369 - Mobile Otimizada */}
+              <div className="flex items-center justify-center lg:justify-start order-2 lg:order-1">
+                <div className="relative w-full max-w-sm lg:max-w-none">
+                  <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-orange-600/30 via-yellow-500/20 to-orange-600/30 rounded-3xl blur-xl animate-pulse" />
                   
-                  <div className="relative text-white">
-                    <div className="text-5xl sm:text-6xl lg:text-8xl font-black tracking-wider mb-6 relative">
+                  <div className="relative text-white text-center lg:text-left">
+                    {/* Logo Mobile */}
+                    <div className="text-4xl sm:text-5xl lg:text-8xl font-black tracking-wider mb-4 sm:mb-6 relative">
                       <span className="block leading-none bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent drop-shadow-2xl animate-[float_3s_ease-in-out_infinite]">
                         LOW
                       </span>
@@ -260,23 +266,25 @@ export default function Home() {
                       </span>
                     </div>
                     
-                    <div className="text-xl sm:text-2xl lg:text-4xl font-bold mb-8 relative">
+                    {/* Subtítulo Mobile */}
+                    <div className="text-lg sm:text-xl lg:text-4xl font-bold mb-6 sm:mb-8 relative">
                       <span className="block text-white/90 drop-shadow-lg">LOJA</span>
                       <span className="block bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent drop-shadow-lg animate-[float_2s_ease-in-out_infinite]">
                         OFICIAL
                       </span>
                     </div>
                     
-                    <div className="relative">
+                    {/* Botão Mobile */}
+                    <div className="relative mb-4">
                       <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full blur-md animate-pulse opacity-75" />
                       
                       <a
                         href="#cadastro"
-                        className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 group overflow-hidden"
+                        className="relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 group overflow-hidden w-full sm:w-auto"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         
-                        <span className="relative z-10 flex items-center gap-2">
+                        <span className="relative z-10 flex items-center justify-center gap-2">
                           ✨ Quero participar
                           <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                         </span>
@@ -285,16 +293,16 @@ export default function Home() {
                       </a>
                     </div>
                     
-                    <p className="text-white/70 text-sm mt-4 animate-[fadeInUp_1s_ease-out_0.5s_both]">
+                    <p className="text-white/70 text-sm sm:text-base animate-[fadeInUp_1s_ease-out_0.5s_both]">
                       Transforme sua audiência em renda extra
                     </p>
                   </div>
                 </div>
               </div>
               
-              {/* Lado direito - carrossel */}
-              <div className="relative flex flex-col items-center lg:items-end">
-                <div className="w-full max-w-lg lg:max-w-2xl">
+              {/* Carrossel Mobile Otimizado */}
+              <div className="relative flex flex-col items-center order-1 lg:order-2">
+                <div className="w-full max-w-sm sm:max-w-lg lg:max-w-2xl">
                   <div className="overflow-hidden rounded-2xl">
                     <div
                       ref={trackRef}
@@ -302,17 +310,17 @@ export default function Home() {
                       className="flex snap-x snap-mandatory overflow-x-auto scroll-smooth no-scrollbar"
                     >
                       {benefits.map((b, i) => (
-                        <div key={i} className="snap-center shrink-0 w-full px-2">
-                          <div className="bg-white text-gray-800 p-8 lg:p-10 rounded-3xl shadow-2xl border-2 border-orange-200 mx-2 min-h-[200px] flex flex-col justify-center">
-                            <div className="flex items-start gap-3 mb-4">
-                              <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                                <span className="text-orange-600 font-bold text-sm">✓</span>
+                        <div key={i} className="snap-center shrink-0 w-full px-1 sm:px-2">
+                          <div className="bg-white text-gray-800 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-3xl shadow-2xl border-2 border-orange-200 mx-1 sm:mx-2 min-h-[180px] sm:min-h-[200px] flex flex-col justify-center">
+                            <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-orange-600 font-bold text-xs sm:text-sm">✓</span>
                               </div>
                               <div className="flex-1">
-                                <h3 className="text-lg lg:text-xl font-bold text-gray-900 leading-tight">{b.title}</h3>
+                                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 leading-tight">{b.title}</h3>
                               </div>
                             </div>
-                            <p className="text-sm lg:text-base text-gray-600 leading-relaxed">{b.desc}</p>
+                            <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed">{b.desc}</p>
                           </div>
                         </div>
                       ))}
@@ -320,20 +328,21 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="mt-8 flex items-center justify-center gap-6 w-full max-w-lg lg:max-w-2xl">
+                {/* Controles Mobile Otimizados */}
+                <div className="mt-6 sm:mt-8 flex items-center justify-center gap-4 sm:gap-6 w-full max-w-sm sm:max-w-lg lg:max-w-2xl">
                   <button 
                     onClick={onPrev} 
-                    className="h-14 w-14 rounded-2xl bg-orange-500 text-white hover:bg-orange-600 transition-colors shadow-lg text-lg"
+                    className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 rounded-xl sm:rounded-2xl bg-orange-500 text-white hover:bg-orange-600 transition-colors shadow-lg text-sm sm:text-base lg:text-lg flex items-center justify-center"
                   >
                     ◀
                   </button>
-                  <div className="flex gap-2">
+                  <div className="flex gap-1.5 sm:gap-2">
                     {Array.from({ length: totalPages }).map((_, i) => (
                       <button
                         key={i}
                         aria-label={`Ir para slide ${i + 1}`}
                         onClick={() => scrollTo(i)}
-                        className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                        className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full transition-all duration-300 ${
                           i === page 
                             ? "bg-orange-500 shadow-lg" 
                             : "bg-white/70 hover:bg-white/90"
@@ -343,7 +352,7 @@ export default function Home() {
                   </div>
                   <button 
                     onClick={onNext} 
-                    className="h-14 w-14 rounded-2xl bg-orange-500 text-white hover:bg-orange-600 transition-colors shadow-lg text-lg"
+                    className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 rounded-xl sm:rounded-2xl bg-orange-500 text-white hover:bg-orange-600 transition-colors shadow-lg text-sm sm:text-base lg:text-lg flex items-center justify-center"
                   >
                     ▶
                   </button>
