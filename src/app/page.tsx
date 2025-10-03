@@ -216,53 +216,58 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <p className="text-base sm:text-lg text-white/80 font-semibold mb-4 animate-[fadeInUp_1s_ease-out_0.7s_both]">
+                <p className="text-xl sm:text-2xl text-white/90 font-semibold mb-6 animate-[fadeInUp_1s_ease-out_0.7s_both]">
                   <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">
                     Comece hoje mesmo, com investimento ZERO.
                   </span>
                 </p>
                 
-                <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-medium leading-relaxed mb-8 animate-[fadeInUp_1s_ease-out_0.8s_both]">
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-6 animate-[fadeInUp_1s_ease-out_0.8s_both]">
                   Use sua influência para 
-                  <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent font-bold"> monetizar seu alcance </span>
+                  <span className="text-orange-400 font-bold"> monetizar seu alcance </span>
                   e ajudar sua audiência a comprar com confiança.
                 </p>
                 
-                <p className="text-base text-white/70 mb-10 animate-[fadeInUp_1s_ease-out_1.2s_both]">
+                <p className="text-sm sm:text-base text-white/60 mb-8 animate-[fadeInUp_1s_ease-out_1.2s_both]">
                   Torne-se parceiro LOW369 e ganhe comissões por indicação em cada venda realizada.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 animate-[fadeInUp_1s_ease-out_1.6s_both]">
+                {/* Badge de Urgência - Destacado */}
+                <div className="mb-6 animate-[fadeInUp_1s_ease-out_1.4s_both]">
+                  <div className="inline-flex items-center gap-2 bg-red-500 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-2xl animate-pulse border-2 border-red-300">
+                    🔥 Vagas Limitadas - Cadastre-se Agora!
+                  </div>
+                </div>
+                
+                <div className="flex flex-col gap-4 animate-[fadeInUp_1s_ease-out_1.6s_both] max-w-xl">
+                  {/* Botão Principal - CTA */}
                   <div className="relative">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                      <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse shadow-lg">
-                        🔥 Vagas Limitadas
-                      </span>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full blur-lg animate-pulse opacity-75" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-2xl blur-lg animate-pulse opacity-75" />
                     
                     <a
                       href="#cadastro"
-                      className="relative inline-flex items-center justify-center px-8 py-5 text-lg font-black text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-110 hover:-translate-y-2 group overflow-hidden"
+                      className="relative flex items-center justify-center w-full px-8 py-5 text-base sm:text-lg font-black text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-2xl shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1 group overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
-                      <span className="relative z-10 flex items-center gap-2">
-                        🚀 QUERO SER PARCEIRO LOW369
-                        <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                      <span className="relative z-10 flex items-center justify-center gap-3">
+                        <span className="text-2xl">🚀</span>
+                        <span>QUERO SER PARCEIRO LOW369</span>
+                        <span className="group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
                       </span>
                       
                       <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white/20 opacity-0 group-hover:animate-[shine_0.75s] group-hover:opacity-100" />
-                    </a>
-                  </div>
+          </a>
+        </div>
                   
+                  {/* Botão Secundário */}
                   <a
                     href="#beneficios"
-                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-orange-400/50 rounded-full hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300 hover:scale-105 group backdrop-blur-sm"
+                    className="flex items-center justify-center w-full px-8 py-4 text-base sm:text-lg font-semibold text-white border-2 border-orange-400/50 rounded-2xl hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-300 hover:scale-105 group backdrop-blur-sm"
                   >
                     <span className="flex items-center gap-2">
                       ✨ Ver benefícios
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">↓</span>
+                      <span className="group-hover:translate-y-1 transition-transform duration-300">↓</span>
                     </span>
                   </a>
                 </div>
@@ -931,7 +936,7 @@ export default function Home() {
           <a href="https://reserva.ink/low369" target="_blank" rel="noopener noreferrer" className="hover:underline">Loja</a>
         </div>
       </footer>
-      </div>
+    </div>
     </>
   );
 }
