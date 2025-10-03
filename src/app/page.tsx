@@ -122,6 +122,12 @@ export default function Home() {
                   </div>
                 </div>
                 
+                <p className="text-base sm:text-lg text-white/80 font-semibold mb-4 animate-[fadeInUp_1s_ease-out_0.7s_both]">
+                  <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold">
+                    Comece hoje mesmo, com investimento ZERO.
+                  </span>
+                </p>
+                
                 <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-medium leading-relaxed mb-8 animate-[fadeInUp_1s_ease-out_0.8s_both]">
                   Use sua influência para 
                   <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent font-bold"> monetizar seu alcance </span>
@@ -480,25 +486,25 @@ export default function Home() {
                   t: "Cupom exclusivo", 
                   d: "Um cupom único para divulgar e gerar comissões em cada venda.",
                   bgColor: "from-purple-600 to-indigo-600",
-                  image: "/cupom.png"
+                  image: "/cupom-novo.png"
                 },
                 { 
                   t: "Link rastreável", 
                   d: "Acompanhe em tempo real as vendas feitas pelo seu link pessoal.",
                   bgColor: "from-blue-600 to-cyan-600",
-                  image: "/link.png"
+                  image: "/link-novo.png"
                 },
                 { 
                   t: "Kit de boas-vindas", 
                   d: "Materiais e instruções personalizadas para começar do jeito certo.",
                   bgColor: "from-orange-600 to-yellow-600",
-                  image: "/kit.png"
+                  image: "/kit-novo.png"
                 },
                 { 
                   t: "Regulamento completo", 
                   d: "Transparência total sobre regras e pagamento de comissões garantidas.",
                   bgColor: "from-green-600 to-emerald-600",
-                  image: "/forms.png"
+                  image: "/forms-novo.png"
                 },
               ].map((c, i) => (
                 <div 
