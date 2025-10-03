@@ -797,8 +797,8 @@ export default function Home() {
           
           {/* Carrossel Infinito */}
           <div className="relative">
-            <div className="overflow-hidden mask-gradient">
-              <div className="flex animate-[scroll_20s_linear_infinite] hover:pause will-change-transform">
+            <div className="overflow-hidden md:mask-gradient">
+              <div className="flex animate-[scroll_5s_linear_infinite] md:animate-[scroll_20s_linear_infinite] hover:pause will-change-transform">
                 {[
                   {
                     nome: "Marcelo Silva",
