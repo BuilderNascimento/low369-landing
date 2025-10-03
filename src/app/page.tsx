@@ -795,6 +795,7 @@ export default function Home() {
                     nome: "Marcelo Silva",
                     cidade: "São Paulo",
                     estado: "SP",
+                    foto: "/Marcelo Silva.jpeg",
                     depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
                     lucro: "R$ 680/mês",
                     tempo: "2 meses como parceiro"
@@ -803,6 +804,7 @@ export default function Home() {
                     nome: "Júlia Mendes",
                     cidade: "Curitiba",
                     estado: "PR",
+                    foto: "/Júlia Mendes.jpeg",
                     depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
                     lucro: "R$ 1.200/mês",
                     tempo: "4 meses como parceiro"
@@ -811,6 +813,7 @@ export default function Home() {
                     nome: "Rafael Costa",
                     cidade: "Belo Horizonte",
                     estado: "MG",
+                    foto: "/Rafael Costa.jpeg",
                     depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
                     lucro: "R$ 430/mês",
                     tempo: "1 mês como parceiro"
@@ -819,6 +822,7 @@ export default function Home() {
                     nome: "Amanda Oliveira",
                     cidade: "Rio de Janeiro",
                     estado: "RJ",
+                    foto: "/Amanda Oliveira.jpeg",
                     depoimento: "O suporte é excelente! Sempre me ajudam com materiais e ideias de post. Meu público adora as peças e eu adoro receber as comissões. Batendo R$ 890 por mês agora!",
                     lucro: "R$ 890/mês",
                     tempo: "3 meses como parceiro"
@@ -827,6 +831,7 @@ export default function Home() {
                     nome: "Diego Almeida",
                     cidade: "Porto Alegre",
                     estado: "RS",
+                    foto: "/Diego Almeida.jpeg",
                     depoimento: "Tenho um canal focado em carros rebaixados. A LOW369 tem tudo a ver com meu público. Sem esforço nenhum já consegui R$ 1.450 só esse mês. Recomendo demais!",
                     lucro: "R$ 1.450/mês",
                     tempo: "5 meses como parceiro"
@@ -836,6 +841,7 @@ export default function Home() {
                     nome: "Marcelo Silva",
                     cidade: "São Paulo",
                     estado: "SP",
+                    foto: "/Marcelo Silva.jpeg",
                     depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
                     lucro: "R$ 680/mês",
                     tempo: "2 meses como parceiro"
@@ -844,6 +850,7 @@ export default function Home() {
                     nome: "Júlia Mendes",
                     cidade: "Curitiba",
                     estado: "PR",
+                    foto: "/Júlia Mendes.jpeg",
                     depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
                     lucro: "R$ 1.200/mês",
                     tempo: "4 meses como parceiro"
@@ -852,6 +859,7 @@ export default function Home() {
                     nome: "Rafael Costa",
                     cidade: "Belo Horizonte",
                     estado: "MG",
+                    foto: "/Rafael Costa.jpeg",
                     depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
                     lucro: "R$ 430/mês",
                     tempo: "1 mês como parceiro"
@@ -861,8 +869,14 @@ export default function Home() {
                     <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl h-full hover:scale-105 transition-transform duration-300">
                       {/* Cabeçalho */}
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                          {depo.nome.charAt(0)}
+                        <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-purple-400/50 shadow-lg flex-shrink-0">
+                          <Image
+                            src={depo.foto}
+                            alt={depo.nome}
+                            width={64}
+                            height={64}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <div>
                           <h3 className="text-white font-bold text-lg">{depo.nome}</h3>
