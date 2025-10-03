@@ -36,9 +36,9 @@ export default function Home() {
 
   // Cálculo de ganhos potenciais
   const calculateEarnings = (followers: number) => {
-    const conversionRate = 0.015; // 1,5% de conversão do cupom
-    const avgTicket = 150; // Ticket médio R$ 150
-    const commission = 0.10; // 10% de comissão
+    const conversionRate = 0.02; // 2% de conversão
+    const avgTicket = 100; // Ticket médio R$ 100
+    const commission = 0.20; // 20% de comissão
     const monthlyEarnings = followers * conversionRate * avgTicket * commission;
     return monthlyEarnings.toFixed(0);
   };
@@ -384,7 +384,7 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
               <div className="mb-8">
                 <label className="block text-white font-semibold mb-4 text-lg">
-                  Quantas visualizações seu CUPOM terá?
+                  Pessoas que você leva ao site através do seu CUPOM
                 </label>
                 <input
                   type="range"
@@ -400,7 +400,7 @@ export default function Home() {
                 />
                 <div className="flex justify-between text-purple-200 text-sm mt-2">
                   <span>1k</span>
-                  <span className="text-white font-bold text-2xl">{(followers / 1000).toFixed(0)}k visualizações</span>
+                  <span className="text-white font-bold text-2xl">{(followers / 1000).toFixed(0)}k pessoas</span>
                   <span>100k</span>
                 </div>
               </div>
@@ -411,7 +411,7 @@ export default function Home() {
                   R$ {calculateEarnings(followers)}
                 </p>
                 <p className="text-green-100 text-sm">
-                  *Baseado em 1,5% de conversão do cupom e ticket médio de R$ 150
+                  *Baseado em 2% de conversão e comissão de 20% sobre ticket médio de R$ 100
                 </p>
               </div>
               
