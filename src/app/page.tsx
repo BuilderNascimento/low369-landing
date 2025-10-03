@@ -111,12 +111,14 @@ export default function Home() {
         }
         
         /* Background images responsivos */
-        .bg-mobile-hero {
+        .hero-bg-section {
           background-image: url(/herocelular.jpeg);
         }
         
-        .bg-desktop-hero {
-          background-image: url(/hero-bg.webp);
+        @media (min-width: 1024px) {
+          .hero-bg-section {
+            background-image: url(/hero-bg.webp);
+          }
         }
         
         input[type="range"]::-webkit-slider-thumb {
@@ -441,7 +443,7 @@ export default function Home() {
 
         {/* Benefícios - com imagem de fundo - VERSÃO MOBILE OTIMIZADA */}
         <section 
-          className="w-full relative overflow-hidden bg-mobile-hero lg:bg-desktop-hero"
+          className="w-full relative overflow-hidden hero-bg-section"
           style={{
             backgroundSize: 'cover',
             backgroundPosition: 'center',
