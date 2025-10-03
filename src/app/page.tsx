@@ -260,7 +260,7 @@ export default function Home() {
                 
                 <p className="text-xl sm:text-2xl font-semibold mb-6 animate-[fadeInUp_1s_ease-out_0.7s_both]">
                   <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-black">
-                    COMECE <span className="text-white">HOJE MESMO</span>, com investimento ZERO.
+                    COMECE <span className="text-white">HOJE MESMO</span>, com investimento <span className="text-white">ZERO</span>.
                   </span>
                 </p>
                 
