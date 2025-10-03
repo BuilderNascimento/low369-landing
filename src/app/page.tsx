@@ -8,7 +8,7 @@ export default function Home() {
     { title: "Processo simplificado", desc: "Sem burocracia. Cadastro rápido e aprovação ágil." },
     { title: "Sistema fácil de usar", desc: "Painel simples para acompanhar cliques, vendas e comissões." },
     { title: "Conteúdos prontos", desc: "Materiais de divulgação e criativos para suas redes." },
-    { title: "Apoio especializado", desc: "Suporte dedicado para otimizar seus resultados." },
+    { title: "Apoio especializado", desc: "Suporte dedicado que maximizam seus resultados." },
     { title: "Evolução compartilhada", desc: "Crescemos juntos e valorizamos seu desenvolvimento." },
   ];
 
@@ -265,8 +265,8 @@ export default function Home() {
                 </p>
                 
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-6 animate-[fadeInUp_1s_ease-out_0.8s_both]">
-                  Use sua influência nas redes para 
-                  <span className="text-orange-400 font-bold">monetizar seu ALCANCE</span> e ajudar sua audiência a comprar com confiança.
+                  Use sua influência nas redes para{" "}
+                  <span className="text-orange-400 font-bold">MONETIZAR SEU ALCANCE</span> e ajudar sua audiência a comprar com confiança.
                 </p>
                 
                 <p className="text-sm sm:text-base text-white/60 mb-8 animate-[fadeInUp_1s_ease-out_1.2s_both]">
@@ -616,7 +616,7 @@ export default function Home() {
               </div>
               
               <p className="mt-6 text-lg sm:text-xl text-white/80 animate-[fadeInUp_1s_ease-out_0.8s_both]">
-                <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent font-semibold">3 passos simples</span> para transformar sua influência em 
+                <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent font-semibold">3 passos simples</span> para transformar sua influência em{" "}
                 <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent font-bold">renda garantida</span>
               </p>
             </div>
@@ -965,7 +965,7 @@ export default function Home() {
               </h2>
               
               <p className="mt-8 text-xl sm:text-2xl lg:text-3xl text-white/80 animate-[fadeInUp_1s_ease-out_0.8s_both]">
-                <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent font-semibold">Tire suas dúvidas</span> e descubra tudo sobre nosso 
+                <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent font-semibold">Tire suas dúvidas</span> e descubra tudo sobre o nosso 
                 <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent font-bold">programa de parceiros</span>
               </p>
             </div>
