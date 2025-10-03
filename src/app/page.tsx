@@ -108,6 +108,15 @@ export default function Home() {
           animation-play-state: paused;
         }
         
+        .mask-gradient {
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        
+        .will-change-transform {
+          will-change: transform;
+        }
+        
         .scroll-animate {
           opacity: 0;
           transform: translateY(30px);
@@ -788,8 +797,8 @@ export default function Home() {
           
           {/* Carrossel Infinito */}
           <div className="relative">
-            <div className="overflow-hidden">
-              <div className="flex animate-[scroll_40s_linear_infinite] hover:pause">
+            <div className="overflow-hidden mask-gradient">
+              <div className="flex animate-[scroll_20s_linear_infinite] hover:pause will-change-transform">
                 {[
                   {
                     nome: "Marcelo Silva",
@@ -866,7 +875,7 @@ export default function Home() {
                   },
                 ].map((depo, i) => (
                   <div key={i} className="flex-shrink-0 w-[400px] mx-4">
-                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl h-full hover:scale-105 transition-transform duration-300">
+                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl h-full hover:scale-105 hover:shadow-purple-500/50 transition-all duration-500 hover:border-purple-400/50">
                       {/* Cabeçalho */}
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-purple-400/50 shadow-lg flex-shrink-0">
