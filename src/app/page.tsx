@@ -335,22 +335,16 @@ export default function Home() {
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                     <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/50 via-yellow-500/30 to-orange-500/50 rounded-3xl blur-sm animate-pulse" />
                     
-                    <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl border border-orange-500/30">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center animate-pulse">
-                            <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z"/>
-                            </svg>
-                          </div>
-                          <p className="text-white/80 text-lg font-medium">
-                            Espaço para seu vídeo
-                          </p>
-                          <p className="text-white/60 text-sm mt-2">
-                            Substitua este placeholder pelo seu vídeo
-                          </p>
-                        </div>
-                      </div>
+                    <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl border border-orange-500/30 overflow-hidden">
+                      <video 
+                        className="w-full h-full object-cover rounded-3xl"
+                        controls
+                        playsInline
+                        poster="/hero-bg.webp"
+                      >
+                        <source src="/video-teste.mp4" type="video/mp4" />
+                        Seu navegador não suporta vídeos HTML5.
+                      </video>
                     </div>
                   </div>
                   
