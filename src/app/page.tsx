@@ -772,16 +772,31 @@ export default function Home() {
         <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
           
-          {/* Partículas flutuantes */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute w-2 h-2 bg-purple-400/40 rounded-full animate-[float_7s_ease-in-out_infinite] top-20 left-[10%]" />
-            <div className="absolute w-1 h-1 bg-pink-400/60 rounded-full animate-[float_5s_ease-in-out_infinite_1s] top-32 right-[15%]" />
-            <div className="absolute w-3 h-3 bg-purple-300/30 rounded-full animate-[float_9s_ease-in-out_infinite_2s] bottom-32 left-[20%]" />
+          {/* Partículas flutuantes laranja - APENAS NO DESKTOP */}
+          <div className="absolute inset-0 overflow-hidden hidden lg:block">
+            {/* Lado esquerdo */}
+            <div className="absolute w-4 h-4 bg-orange-400/60 rounded-full animate-[float_7s_ease-in-out_infinite] top-20 left-[5%]" />
+            <div className="absolute w-2 h-2 bg-yellow-400/70 rounded-full animate-[float_5s_ease-in-out_infinite_1s] top-40 left-[8%]" />
+            <div className="absolute w-6 h-6 bg-orange-300/40 rounded-full animate-[float_9s_ease-in-out_infinite_2s] top-60 left-[3%]" />
+            <div className="absolute w-3 h-3 bg-orange-500/50 rounded-full animate-[float_6s_ease-in-out_infinite_3s] bottom-40 left-[6%]" />
+            <div className="absolute w-5 h-5 bg-yellow-300/60 rounded-full animate-[float_8s_ease-in-out_infinite_1.5s] bottom-20 left-[4%]" />
+            
+            {/* Lado direito */}
+            <div className="absolute w-4 h-4 bg-orange-400/60 rounded-full animate-[float_6s_ease-in-out_infinite_0.5s] top-20 right-[5%]" />
+            <div className="absolute w-3 h-3 bg-yellow-400/70 rounded-full animate-[float_7s_ease-in-out_infinite_2s] top-40 right-[8%]" />
+            <div className="absolute w-5 h-5 bg-orange-300/50 rounded-full animate-[float_8s_ease-in-out_infinite] top-60 right-[3%]" />
+            <div className="absolute w-2 h-2 bg-orange-500/60 rounded-full animate-[float_5s_ease-in-out_infinite_2.5s] bottom-40 right-[6%]" />
+            <div className="absolute w-4 h-4 bg-yellow-300/50 rounded-full animate-[float_9s_ease-in-out_infinite_1s] bottom-20 right-[4%]" />
+            
+            {/* Partículas roxas originais - mais sutis */}
+            <div className="absolute w-2 h-2 bg-purple-400/30 rounded-full animate-[float_7s_ease-in-out_infinite] top-20 left-[15%]" />
+            <div className="absolute w-1 h-1 bg-pink-400/40 rounded-full animate-[float_5s_ease-in-out_infinite_1s] top-32 right-[15%]" />
+            <div className="absolute w-3 h-3 bg-purple-300/20 rounded-full animate-[float_9s_ease-in-out_infinite_2s] bottom-32 left-[20%]" />
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-6 mb-16">
             <div className="text-center">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4">
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-4">
                 <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
                   O que nossos
                 </span>
@@ -874,8 +889,8 @@ export default function Home() {
                     tempo: "1 mês como parceiro"
                   },
                 ].map((depo, i) => (
-                  <div key={i} className="flex-shrink-0 w-[400px] mx-4">
-                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl h-full hover:scale-105 hover:shadow-purple-500/50 transition-all duration-500 hover:border-purple-400/50">
+                  <div key={i} className="flex-shrink-0 w-[400px] lg:w-[500px] mx-4">
+                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 lg:p-10 border border-white/20 shadow-2xl h-full hover:scale-105 hover:shadow-purple-500/50 transition-all duration-500 hover:border-purple-400/50">
                       {/* Cabeçalho */}
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-purple-400/50 shadow-lg flex-shrink-0">
@@ -921,16 +936,16 @@ export default function Home() {
           
           <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 grid gap-16">
             <div className="text-center relative">
-              <h2 className="relative text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              <h2 className="relative text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight">
                 <span className="block bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite]">
                   Perguntas
                 </span>
-                <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite_0.3s] mt-2">
+                <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite_0.3s] mt-4">
                   frequentes
                 </span>
               </h2>
               
-              <p className="mt-6 text-lg sm:text-xl text-white/80 animate-[fadeInUp_1s_ease-out_0.8s_both]">
+              <p className="mt-8 text-xl sm:text-2xl lg:text-3xl text-white/80 animate-[fadeInUp_1s_ease-out_0.8s_both]">
                 <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent font-semibold">Tire suas dúvidas</span> e descubra tudo sobre nosso 
                 <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent font-bold">programa de parceiros</span>
               </p>
