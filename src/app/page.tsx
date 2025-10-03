@@ -112,7 +112,7 @@ export default function Home() {
         
         /* Background images responsivos */
         .bg-mobile-hero {
-          background-image: url(/herocelular.png);
+          background-image: url(/herocelular.jpeg);
         }
         
         .bg-desktop-hero {
