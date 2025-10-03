@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -14,6 +14,34 @@ export default function Home() {
 
   const trackRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
+  const [followers, setFollowers] = useState(5000);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Animação ao scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fadeInUp');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.scroll-animate').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  // Cálculo de ganhos potenciais
+  const calculateEarnings = (followers: number) => {
+    const conversionRate = 0.02; // 2% de conversão
+    const avgTicket = 150; // Ticket médio R$ 150
+    const commission = 0.10; // 10% de comissão
+    const monthlyEarnings = followers * conversionRate * avgTicket * commission;
+    return monthlyEarnings.toFixed(0);
+  };
 
   const totalPages = benefits.length;
 
@@ -36,7 +64,73 @@ export default function Home() {
   };
 
   return (
-    <div className="font-sans min-h-screen bg-background text-foreground">
+    <>
+      <style jsx global>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes shine {
+          to { left: 200%; }
+        }
+        
+        .scroll-animate {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.6s ease-out;
+        }
+        
+        .scroll-animate.animate-fadeInUp {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+          appearance: none;
+          width: 24px;
+          height: 24px;
+          background: white;
+          border: 4px solid rgb(168 85 247);
+          border-radius: 50%;
+          cursor: pointer;
+          box-shadow: 0 4px 12px rgba(168, 85, 247, 0.5);
+          transition: all 0.2s;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover {
+          transform: scale(1.2);
+          box-shadow: 0 6px 20px rgba(168, 85, 247, 0.7);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+          width: 24px;
+          height: 24px;
+          background: white;
+          border: 4px solid rgb(168 85 247);
+          border-radius: 50%;
+          cursor: pointer;
+          box-shadow: 0 4px 12px rgba(168, 85, 247, 0.5);
+          transition: all 0.2s;
+        }
+        
+        input[type="range"]::-moz-range-thumb:hover {
+          transform: scale(1.2);
+          box-shadow: 0 6px 20px rgba(168, 85, 247, 0.7);
+        }
+      `}</style>
+      <div className="font-sans min-h-screen bg-background text-foreground">
       <header className="w-full sticky top-0 z-40 backdrop-blur-md bg-white/95 border-b border-orange-200/50 shadow-lg">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <div className="relative">
@@ -108,12 +202,12 @@ export default function Home() {
                 <div className="relative mb-8">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent blur-3xl animate-pulse" />
                   
-                  <h1 className="relative text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-                    <span className="block bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite]">
-                      Programa Oficial
+                  <h1 className="relative text-4xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight">
+                    <span className="block bg-gradient-to-r from-green-400 via-emerald-300 to-green-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite] text-3xl sm:text-4xl lg:text-5xl">
+                      ZERO investimento.
                     </span>
                     <span className="block bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl animate-[float_4s_ease-in-out_infinite_0.5s] mt-2">
-                      de Parceiros
+                      LUCRO de verdade.
                     </span>
                   </h1>
                   
@@ -140,16 +234,21 @@ export default function Home() {
                 
                 <div className="flex flex-col sm:flex-row gap-4 animate-[fadeInUp_1s_ease-out_1.6s_both]">
                   <div className="relative">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                      <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse shadow-lg">
+                        🔥 Vagas Limitadas
+                      </span>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full blur-lg animate-pulse opacity-75" />
                     
                     <a
                       href="#cadastro"
-                      className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-2 group overflow-hidden"
+                      className="relative inline-flex items-center justify-center px-8 py-5 text-lg font-black text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-110 hover:-translate-y-2 group overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
                       <span className="relative z-10 flex items-center gap-2">
-                        🚀 Quero ser parceiro
+                        🚀 QUERO SER PARCEIRO LOW369
                         <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
                       </span>
                       
@@ -220,8 +319,8 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 rounded-full blur-md opacity-75 animate-pulse"></div>
                     <a
                       href="https://www.low369.com.br"
-                      target="_blank"
-                      rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                       className="relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white px-8 py-4 text-base sm:text-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-blue-500/50 group overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -236,6 +335,78 @@ export default function Home() {
                     Conheça nossos produtos e valores
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Calculadora de Ganhos */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-800 py-16">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/20 via-transparent to-transparent" />
+          
+          {/* Partículas flutuantes */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute w-2 h-2 bg-purple-400/60 rounded-full animate-[float_6s_ease-in-out_infinite] top-20 left-[10%]" />
+            <div className="absolute w-1 h-1 bg-pink-400/80 rounded-full animate-[float_4s_ease-in-out_infinite_1s] top-32 right-[15%]" />
+            <div className="absolute w-3 h-3 bg-purple-300/40 rounded-full animate-[float_8s_ease-in-out_infinite_2s] bottom-32 left-[20%]" />
+          </div>
+          
+          <div className="relative z-10 mx-auto max-w-4xl px-6">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
+                <span className="bg-gradient-to-r from-purple-300 via-pink-300 to-purple-400 bg-clip-text text-transparent">
+                  Calcule seu Potencial de Ganhos
+                </span>
+              </h2>
+              <p className="text-purple-200 text-lg">
+                Descubra quanto você pode ganhar como parceiro LOW369
+              </p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20">
+              <div className="mb-8">
+                <label className="block text-white font-semibold mb-4 text-lg">
+                  Quantos seguidores você tem?
+                </label>
+                <input
+                  type="range"
+                  min="1000"
+                  max="100000"
+                  step="1000"
+                  value={followers}
+                  onChange={(e) => setFollowers(Number(e.target.value))}
+                  className="w-full h-3 bg-purple-300/30 rounded-lg appearance-none cursor-pointer slider"
+                  style={{
+                    background: `linear-gradient(to right, rgb(168 85 247) 0%, rgb(168 85 247) ${((followers - 1000) / 99000) * 100}%, rgba(216, 180, 254, 0.3) ${((followers - 1000) / 99000) * 100}%, rgba(216, 180, 254, 0.3) 100%)`
+                  }}
+                />
+                <div className="flex justify-between text-purple-200 text-sm mt-2">
+                  <span>1k</span>
+                  <span className="text-white font-bold text-2xl">{(followers / 1000).toFixed(0)}k seguidores</span>
+                  <span>100k</span>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-green-500 via-emerald-500 to-green-600 rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300">
+                <p className="text-white/90 text-lg mb-2">💰 Ganho Potencial Mensal</p>
+                <p className="text-5xl sm:text-6xl font-black text-white mb-2">
+                  R$ {calculateEarnings(followers)}
+                </p>
+                <p className="text-green-100 text-sm">
+                  *Baseado em taxa de conversão de 2% e ticket médio de R$ 150
+                </p>
+              </div>
+              
+              <div className="mt-8 text-center">
+                <a
+                  href="#cadastro"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-black text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 group"
+                >
+                  <span className="flex items-center gap-2">
+                    🚀 COMEÇAR AGORA
+                    <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -760,6 +931,7 @@ export default function Home() {
           <a href="https://reserva.ink/low369" target="_blank" rel="noopener noreferrer" className="hover:underline">Loja</a>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
