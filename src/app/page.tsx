@@ -213,6 +213,29 @@ export default function Home() {
                     🎥 Assista agora
                   </div>
                 </div>
+                
+                {/* Botão Loja Oficial */}
+                <div className="mt-8 text-center animate-[fadeInUp_1s_ease-out_1.5s_both]">
+                  <div className="relative inline-block">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 rounded-full blur-md opacity-75 animate-pulse"></div>
+                    <a
+                      href="https://www.low369.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white px-8 py-4 text-base sm:text-lg font-bold hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-blue-500/50 group overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center gap-3">
+                        🏪 Acessar Loja Oficial
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                      </span>
+                      <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white/20 opacity-0 group-hover:animate-[shine_0.75s] group-hover:opacity-100"></div>
+                    </a>
+                  </div>
+                  <p className="text-white/60 text-sm mt-3">
+                    Conheça nossos produtos e valores
+                  </p>
+                </div>
               </div>
             </div>
           </div>
