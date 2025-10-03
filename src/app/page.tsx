@@ -36,7 +36,7 @@ export default function Home() {
 
   // Cálculo de ganhos potenciais
   const calculateEarnings = (followers: number) => {
-    const conversionRate = 0.02; // 2% de conversão
+    const conversionRate = 0.015; // 1,5% de conversão do cupom
     const avgTicket = 150; // Ticket médio R$ 150
     const commission = 0.10; // 10% de comissão
     const monthlyEarnings = followers * conversionRate * avgTicket * commission;
@@ -411,7 +411,7 @@ export default function Home() {
                   R$ {calculateEarnings(followers)}
                 </p>
                 <p className="text-green-100 text-sm">
-                  *Baseado em taxa de conversão de 2% e ticket médio de R$ 150
+                  *Baseado em 1,5% de conversão do cupom e ticket médio de R$ 150
                 </p>
               </div>
               
