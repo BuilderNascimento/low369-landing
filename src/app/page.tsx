@@ -795,7 +795,7 @@ export default function Home() {
                     nome: "Marcelo Silva",
                     cidade: "São Paulo",
                     estado: "SP",
-                    foto: "/Marcelo Silva.jpeg",
+                    foto: "/marcelo.jpg",
                     depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
                     lucro: "R$ 680/mês",
                     tempo: "2 meses como parceiro"
@@ -804,7 +804,7 @@ export default function Home() {
                     nome: "Júlia Mendes",
                     cidade: "Curitiba",
                     estado: "PR",
-                    foto: "/Júlia Mendes.jpeg",
+                    foto: "/julia.jpg",
                     depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
                     lucro: "R$ 1.200/mês",
                     tempo: "4 meses como parceiro"
@@ -813,7 +813,7 @@ export default function Home() {
                     nome: "Rafael Costa",
                     cidade: "Belo Horizonte",
                     estado: "MG",
-                    foto: "/Rafael Costa.jpeg",
+                    foto: "/rafael.jpg",
                     depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
                     lucro: "R$ 430/mês",
                     tempo: "1 mês como parceiro"
@@ -822,7 +822,7 @@ export default function Home() {
                     nome: "Amanda Oliveira",
                     cidade: "Rio de Janeiro",
                     estado: "RJ",
-                    foto: "/Amanda Oliveira.jpeg",
+                    foto: "/amanda.jpg",
                     depoimento: "O suporte é excelente! Sempre me ajudam com materiais e ideias de post. Meu público adora as peças e eu adoro receber as comissões. Batendo R$ 890 por mês agora!",
                     lucro: "R$ 890/mês",
                     tempo: "3 meses como parceiro"
@@ -831,7 +831,7 @@ export default function Home() {
                     nome: "Diego Almeida",
                     cidade: "Porto Alegre",
                     estado: "RS",
-                    foto: "/Diego Almeida.jpeg",
+                    foto: "/diogo.jpg",
                     depoimento: "Tenho um canal focado em carros rebaixados. A LOW369 tem tudo a ver com meu público. Sem esforço nenhum já consegui R$ 1.450 só esse mês. Recomendo demais!",
                     lucro: "R$ 1.450/mês",
                     tempo: "5 meses como parceiro"
@@ -841,7 +841,7 @@ export default function Home() {
                     nome: "Marcelo Silva",
                     cidade: "São Paulo",
                     estado: "SP",
-                    foto: "/Marcelo Silva.jpeg",
+                    foto: "/marcelo.jpg",
                     depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
                     lucro: "R$ 680/mês",
                     tempo: "2 meses como parceiro"
@@ -850,7 +850,7 @@ export default function Home() {
                     nome: "Júlia Mendes",
                     cidade: "Curitiba",
                     estado: "PR",
-                    foto: "/Júlia Mendes.jpeg",
+                    foto: "/julia.jpg",
                     depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
                     lucro: "R$ 1.200/mês",
                     tempo: "4 meses como parceiro"
@@ -859,7 +859,7 @@ export default function Home() {
                     nome: "Rafael Costa",
                     cidade: "Belo Horizonte",
                     estado: "MG",
-                    foto: "/Rafael Costa.jpeg",
+                    foto: "/rafael.jpg",
                     depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
                     lucro: "R$ 430/mês",
                     tempo: "1 mês como parceiro"
