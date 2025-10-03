@@ -99,6 +99,15 @@ export default function Home() {
           to { left: 200%; }
         }
         
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        .hover\:pause:hover {
+          animation-play-state: paused;
+        }
+        
         .scroll-animate {
           opacity: 0;
           transform: translateY(30px);
@@ -746,6 +755,139 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Depoimentos - Carrossel Infinito */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
+          
+          {/* Partículas flutuantes */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute w-2 h-2 bg-purple-400/40 rounded-full animate-[float_7s_ease-in-out_infinite] top-20 left-[10%]" />
+            <div className="absolute w-1 h-1 bg-pink-400/60 rounded-full animate-[float_5s_ease-in-out_infinite_1s] top-32 right-[15%]" />
+            <div className="absolute w-3 h-3 bg-purple-300/30 rounded-full animate-[float_9s_ease-in-out_infinite_2s] bottom-32 left-[20%]" />
+          </div>
+          
+          <div className="relative z-10 mx-auto max-w-7xl px-6 mb-16">
+            <div className="text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4">
+                <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
+                  O que nossos
+                </span>
+                <span className="block bg-gradient-to-r from-purple-400 via-pink-300 to-purple-500 bg-clip-text text-transparent drop-shadow-2xl mt-2">
+                  parceiros dizem
+                </span>
+              </h2>
+              <p className="mt-6 text-lg sm:text-xl text-white/80 font-medium">
+                Histórias reais de quem já está <span className="text-green-400 font-bold">lucrando com a LOW369</span>
+              </p>
+            </div>
+          </div>
+          
+          {/* Carrossel Infinito */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div className="flex animate-[scroll_40s_linear_infinite] hover:pause">
+                {[
+                  {
+                    nome: "Marcelo Silva",
+                    cidade: "São Paulo",
+                    estado: "SP",
+                    depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
+                    lucro: "R$ 680/mês",
+                    tempo: "2 meses como parceiro"
+                  },
+                  {
+                    nome: "Júlia Mendes",
+                    cidade: "Curitiba",
+                    estado: "PR",
+                    depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
+                    lucro: "R$ 1.200/mês",
+                    tempo: "4 meses como parceiro"
+                  },
+                  {
+                    nome: "Rafael Costa",
+                    cidade: "Belo Horizonte",
+                    estado: "MG",
+                    depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
+                    lucro: "R$ 430/mês",
+                    tempo: "1 mês como parceiro"
+                  },
+                  {
+                    nome: "Amanda Oliveira",
+                    cidade: "Rio de Janeiro",
+                    estado: "RJ",
+                    depoimento: "O suporte é excelente! Sempre me ajudam com materiais e ideias de post. Meu público adora as peças e eu adoro receber as comissões. Batendo R$ 890 por mês agora!",
+                    lucro: "R$ 890/mês",
+                    tempo: "3 meses como parceiro"
+                  },
+                  {
+                    nome: "Diego Almeida",
+                    cidade: "Porto Alegre",
+                    estado: "RS",
+                    depoimento: "Tenho um canal focado em carros rebaixados. A LOW369 tem tudo a ver com meu público. Sem esforço nenhum já consegui R$ 1.450 só esse mês. Recomendo demais!",
+                    lucro: "R$ 1.450/mês",
+                    tempo: "5 meses como parceiro"
+                  },
+                  // Duplicar para efeito infinito
+                  {
+                    nome: "Marcelo Silva",
+                    cidade: "São Paulo",
+                    estado: "SP",
+                    depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
+                    lucro: "R$ 680/mês",
+                    tempo: "2 meses como parceiro"
+                  },
+                  {
+                    nome: "Júlia Mendes",
+                    cidade: "Curitiba",
+                    estado: "PR",
+                    depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
+                    lucro: "R$ 1.200/mês",
+                    tempo: "4 meses como parceiro"
+                  },
+                  {
+                    nome: "Rafael Costa",
+                    cidade: "Belo Horizonte",
+                    estado: "MG",
+                    depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
+                    lucro: "R$ 430/mês",
+                    tempo: "1 mês como parceiro"
+                  },
+                ].map((depo, i) => (
+                  <div key={i} className="flex-shrink-0 w-[400px] mx-4">
+                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl h-full hover:scale-105 transition-transform duration-300">
+                      {/* Cabeçalho */}
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                          {depo.nome.charAt(0)}
+                        </div>
+                        <div>
+                          <h3 className="text-white font-bold text-lg">{depo.nome}</h3>
+                          <p className="text-purple-200 text-sm">{depo.cidade}, {depo.estado}</p>
+                          <p className="text-purple-300 text-xs mt-1">{depo.tempo}</p>
+                        </div>
+                      </div>
+                      
+                      {/* Depoimento */}
+                      <div className="mb-6">
+                        <div className="text-6xl text-purple-400/30 leading-none mb-2">"</div>
+                        <p className="text-white/90 leading-relaxed text-base italic">
+                          {depo.depoimento}
+                        </p>
+                      </div>
+                      
+                      {/* Badge de Lucro */}
+                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 px-4 py-2 rounded-full">
+                        <span className="text-2xl">💰</span>
+                        <span className="text-white font-bold">{depo.lucro}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
