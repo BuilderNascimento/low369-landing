@@ -411,7 +411,7 @@ export default function Home() {
                   R$ {calculateEarnings(followers)}
                 </p>
                 <p className="text-green-100 text-sm">
-                  *Baseado em 2% de conversão e comissão de 20% sobre ticket médio de R$ 100
+                  *Baseado em 2% de conversão e comissões sobre ticket médio de R$ 100
                 </p>
               </div>
               
