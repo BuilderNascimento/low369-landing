@@ -887,7 +887,7 @@ export default function Home() {
                       
                       {/* Depoimento */}
                       <div className="mb-6">
-                        <div className="text-6xl text-purple-400/30 leading-none mb-2">"</div>
+                        <div className="text-6xl text-purple-400/30 leading-none mb-2">&ldquo;</div>
                         <p className="text-white/90 leading-relaxed text-base italic">
                           {depo.depoimento}
                         </p>
