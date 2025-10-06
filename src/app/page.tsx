@@ -814,7 +814,7 @@ export default function Home() {
                     cidade: "Florianópolis",
                     estado: "SC",
                     foto: "/rafael.jpg",
-                    nicho: "Instagram - Surf",
+                    nicho: "Instagram - CARROS REBAIXADOS",
                     seguidores: "1.5k",
                     tempo: "há 1 hora"
                   },
@@ -823,7 +823,7 @@ export default function Home() {
                     cidade: "São Paulo",
                     estado: "SP",
                     foto: "/marcelo.jpg",
-                    nicho: "Instagram - Lifestyle",
+                    nicho: "TikTok - LIFESTYLE AUTOMOTIVO",
                     seguidores: "18k",
                     tempo: "há 2 horas"
                   },
@@ -832,7 +832,7 @@ export default function Home() {
                     cidade: "Goiânia",
                     estado: "GO",
                     foto: "/amanda.jpg",
-                    nicho: "TikTok - Dança",
+                    nicho: "Instagram - MOTOS DE GRAU",
                     seguidores: "5k",
                     tempo: "há 3 horas"
                   },
@@ -841,7 +841,7 @@ export default function Home() {
                     cidade: "Rio de Janeiro",
                     estado: "RJ",
                     foto: "/julia.jpg",
-                    nicho: "TikTok - Motos",
+                    nicho: "TikTok - MOTOS E MANOBRAS",
                     seguidores: "32k",
                     tempo: "há 4 horas"
                   },
@@ -850,7 +850,7 @@ export default function Home() {
                     cidade: "Recife",
                     estado: "PE",
                     foto: "/diogo.jpg",
-                    nicho: "Instagram - Skate",
+                    nicho: "YouTube - CARROS TUNADOS",
                     seguidores: "3.8k",
                     tempo: "há 7 horas"
                   },
@@ -860,7 +860,7 @@ export default function Home() {
                     cidade: "Florianópolis",
                     estado: "SC",
                     foto: "/rafael.jpg",
-                    nicho: "Instagram - Surf",
+                    nicho: "Instagram - CARROS REBAIXADOS",
                     seguidores: "1.5k",
                     tempo: "há 1 hora"
                   },
@@ -869,7 +869,7 @@ export default function Home() {
                     cidade: "São Paulo",
                     estado: "SP",
                     foto: "/marcelo.jpg",
-                    nicho: "Instagram - Lifestyle",
+                    nicho: "TikTok - LIFESTYLE AUTOMOTIVO",
                     seguidores: "18k",
                     tempo: "há 2 horas"
                   },
@@ -878,7 +878,7 @@ export default function Home() {
                     cidade: "Goiânia",
                     estado: "GO",
                     foto: "/amanda.jpg",
-                    nicho: "TikTok - Dança",
+                    nicho: "Instagram - MOTOS DE GRAU",
                     seguidores: "5k",
                     tempo: "há 3 horas"
                   },
@@ -887,7 +887,7 @@ export default function Home() {
                     cidade: "Rio de Janeiro",
                     estado: "RJ",
                     foto: "/julia.jpg",
-                    nicho: "TikTok - Motos",
+                    nicho: "TikTok - MOTOS E MANOBRAS",
                     seguidores: "32k",
                     tempo: "há 4 horas"
                   },
@@ -896,7 +896,7 @@ export default function Home() {
                     cidade: "Recife",
                     estado: "PE",
                     foto: "/diogo.jpg",
-                    nicho: "Instagram - Skate",
+                    nicho: "YouTube - CARROS TUNADOS",
                     seguidores: "3.8k",
                     tempo: "há 7 horas"
                   },
