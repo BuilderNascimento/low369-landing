@@ -810,6 +810,15 @@ export default function Home() {
               <div className="flex animate-[scroll_5s_linear_infinite] md:animate-[scroll_20s_linear_infinite] hover:pause will-change-transform">
                 {[
                   {
+                    nome: "Lucas T.",
+                    cidade: "Florianópolis",
+                    estado: "SC",
+                    foto: "/rafael.jpg",
+                    nicho: "Instagram - Surf",
+                    seguidores: "1.5k",
+                    tempo: "há 1 hora"
+                  },
+                  {
                     nome: "Carlos M.",
                     cidade: "São Paulo",
                     estado: "SP",
@@ -817,6 +826,15 @@ export default function Home() {
                     nicho: "Instagram - Lifestyle",
                     seguidores: "18k",
                     tempo: "há 2 horas"
+                  },
+                  {
+                    nome: "Beatriz F.",
+                    cidade: "Goiânia",
+                    estado: "GO",
+                    foto: "/amanda.jpg",
+                    nicho: "TikTok - Dança",
+                    seguidores: "5k",
+                    tempo: "há 3 horas"
                   },
                   {
                     nome: "Marina S.",
@@ -837,10 +855,19 @@ export default function Home() {
                     tempo: "há 6 horas"
                   },
                   {
+                    nome: "Rodrigo A.",
+                    cidade: "Recife",
+                    estado: "PE",
+                    foto: "/diogo.jpg",
+                    nicho: "Instagram - Skate",
+                    seguidores: "3.8k",
+                    tempo: "há 7 horas"
+                  },
+                  {
                     nome: "Thiago L.",
                     cidade: "Curitiba",
                     estado: "PR",
-                    foto: "/diogo.jpg",
+                    foto: "/marcelo.jpg",
                     nicho: "YouTube - Rebaixados",
                     seguidores: "52k",
                     tempo: "há 8 horas"
@@ -849,12 +876,21 @@ export default function Home() {
                     nome: "Juliana P.",
                     cidade: "Brasília",
                     estado: "DF",
-                    foto: "/amanda.jpg",
+                    foto: "/julia.jpg",
                     nicho: "Instagram - Fashion",
                     seguidores: "41k",
                     tempo: "há 11 horas"
                   },
                   // Duplicar para efeito infinito
+                  {
+                    nome: "Lucas T.",
+                    cidade: "Florianópolis",
+                    estado: "SC",
+                    foto: "/rafael.jpg",
+                    nicho: "Instagram - Surf",
+                    seguidores: "1.5k",
+                    tempo: "há 1 hora"
+                  },
                   {
                     nome: "Carlos M.",
                     cidade: "São Paulo",
@@ -863,6 +899,15 @@ export default function Home() {
                     nicho: "Instagram - Lifestyle",
                     seguidores: "18k",
                     tempo: "há 2 horas"
+                  },
+                  {
+                    nome: "Beatriz F.",
+                    cidade: "Goiânia",
+                    estado: "GO",
+                    foto: "/amanda.jpg",
+                    nicho: "TikTok - Dança",
+                    seguidores: "5k",
+                    tempo: "há 3 horas"
                   },
                   {
                     nome: "Marina S.",
@@ -874,13 +919,13 @@ export default function Home() {
                     tempo: "há 4 horas"
                   },
                   {
-                    nome: "Felipe R.",
-                    cidade: "Belo Horizonte",
-                    estado: "MG",
-                    foto: "/rafael.jpg",
-                    nicho: "Instagram - Carros",
-                    seguidores: "25k",
-                    tempo: "há 6 horas"
+                    nome: "Rodrigo A.",
+                    cidade: "Recife",
+                    estado: "PE",
+                    foto: "/diogo.jpg",
+                    nicho: "Instagram - Skate",
+                    seguidores: "3.8k",
+                    tempo: "há 7 horas"
                   },
                 ].map((cadastro, i) => (
                   <div key={i} className="flex-shrink-0 w-[350px] lg:w-[420px] mx-4">
