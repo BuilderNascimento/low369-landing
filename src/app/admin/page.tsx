@@ -13,7 +13,7 @@ interface Lead {
   redesSociais: Record<string, string>;
   audiencia: string;
   nicho: string;
-  timestamp: any;
+  timestamp: { toDate?: () => Date } | null;
   status: string;
 }
 

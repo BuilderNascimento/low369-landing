@@ -17,7 +17,6 @@ export default function Home() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
   const [followers, setFollowers] = useState(5000);
-  const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
@@ -56,9 +55,6 @@ export default function Home() {
     container.scrollTo({ left: x, behavior: 'smooth' });
     setPage(index);
   };
-
-  const onPrev = () => scrollTo(Math.max(0, page - 1));
-  const onNext = () => scrollTo(Math.min(totalPages - 1, page + 1));
 
   const onScroll = () => {
     if (!trackRef.current) return;
