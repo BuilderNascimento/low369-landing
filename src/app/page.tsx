@@ -792,14 +792,14 @@ export default function Home() {
             <div className="text-center">
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-4">
                 <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
-                  O que nossos
+                  Últimos
                 </span>
                 <span className="block bg-gradient-to-r from-purple-400 via-pink-300 to-purple-500 bg-clip-text text-transparent drop-shadow-2xl mt-2">
-                  parceiros dizem
+                  cadastros realizados
                 </span>
               </h2>
               <p className="mt-6 text-lg sm:text-xl text-white/80 font-medium">
-                Histórias reais de quem já está <span className="text-green-400 font-bold">lucrando com a LOW369</span>
+                Pessoas reais garantindo sua vaga para o <span className="text-orange-400 font-bold">lançamento dia 18</span> 🔥
               </p>
             </div>
           </div>
@@ -810,111 +810,116 @@ export default function Home() {
               <div className="flex animate-[scroll_5s_linear_infinite] md:animate-[scroll_20s_linear_infinite] hover:pause will-change-transform">
                 {[
                   {
-                    nome: "Marcelo Silva",
+                    nome: "Carlos M.",
                     cidade: "São Paulo",
                     estado: "SP",
                     foto: "/marcelo.jpg",
-                    depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
-                    lucro: "R$ 680/mês",
-                    tempo: "2 meses como parceiro"
+                    nicho: "Instagram - Lifestyle",
+                    seguidores: "18k",
+                    tempo: "há 2 horas"
                   },
                   {
-                    nome: "Júlia Mendes",
-                    cidade: "Curitiba",
-                    estado: "PR",
+                    nome: "Marina S.",
+                    cidade: "Rio de Janeiro",
+                    estado: "RJ",
                     foto: "/julia.jpg",
-                    depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
-                    lucro: "R$ 1.200/mês",
-                    tempo: "4 meses como parceiro"
+                    nicho: "TikTok - Motos",
+                    seguidores: "32k",
+                    tempo: "há 4 horas"
                   },
                   {
-                    nome: "Rafael Costa",
+                    nome: "Felipe R.",
                     cidade: "Belo Horizonte",
                     estado: "MG",
                     foto: "/rafael.jpg",
-                    depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
-                    lucro: "R$ 430/mês",
-                    tempo: "1 mês como parceiro"
+                    nicho: "Instagram - Carros",
+                    seguidores: "25k",
+                    tempo: "há 6 horas"
                   },
                   {
-                    nome: "Amanda Oliveira",
-                    cidade: "Rio de Janeiro",
-                    estado: "RJ",
-                    foto: "/amanda.jpg",
-                    depoimento: "O suporte é excelente! Sempre me ajudam com materiais e ideias de post. Meu público adora as peças e eu adoro receber as comissões. Batendo R$ 890 por mês agora!",
-                    lucro: "R$ 890/mês",
-                    tempo: "3 meses como parceiro"
-                  },
-                  {
-                    nome: "Diego Almeida",
-                    cidade: "Porto Alegre",
-                    estado: "RS",
+                    nome: "Thiago L.",
+                    cidade: "Curitiba",
+                    estado: "PR",
                     foto: "/diogo.jpg",
-                    depoimento: "Tenho um canal focado em carros rebaixados. A LOW369 tem tudo a ver com meu público. Sem esforço nenhum já consegui R$ 1.450 só esse mês. Recomendo demais!",
-                    lucro: "R$ 1.450/mês",
-                    tempo: "5 meses como parceiro"
+                    nicho: "YouTube - Rebaixados",
+                    seguidores: "52k",
+                    tempo: "há 8 horas"
+                  },
+                  {
+                    nome: "Juliana P.",
+                    cidade: "Brasília",
+                    estado: "DF",
+                    foto: "/amanda.jpg",
+                    nicho: "Instagram - Fashion",
+                    seguidores: "41k",
+                    tempo: "há 11 horas"
                   },
                   // Duplicar para efeito infinito
                   {
-                    nome: "Marcelo Silva",
+                    nome: "Carlos M.",
                     cidade: "São Paulo",
                     estado: "SP",
                     foto: "/marcelo.jpg",
-                    depoimento: "Comecei com apenas 8k de seguidores no Instagram. No primeiro mês já faturei R$ 680 só divulgando nas stories! É incrível como o pessoal confia na indicação.",
-                    lucro: "R$ 680/mês",
-                    tempo: "2 meses como parceiro"
+                    nicho: "Instagram - Lifestyle",
+                    seguidores: "18k",
+                    tempo: "há 2 horas"
                   },
                   {
-                    nome: "Júlia Mendes",
-                    cidade: "Curitiba",
-                    estado: "PR",
+                    nome: "Marina S.",
+                    cidade: "Rio de Janeiro",
+                    estado: "RJ",
                     foto: "/julia.jpg",
-                    depoimento: "Trabalho com motos no TikTok e a galera sempre me perguntava onde comprar as camisetas. Agora além de indicar, eu ganho comissão! Já passou de R$ 1.200 esse mês.",
-                    lucro: "R$ 1.200/mês",
-                    tempo: "4 meses como parceiro"
+                    nicho: "TikTok - Motos",
+                    seguidores: "32k",
+                    tempo: "há 4 horas"
                   },
                   {
-                    nome: "Rafael Costa",
+                    nome: "Felipe R.",
                     cidade: "Belo Horizonte",
                     estado: "MG",
                     foto: "/rafael.jpg",
-                    depoimento: "Achei que ia ser difícil, mas foi super simples. Coloquei o cupom na bio, faço um post por semana e já tô tirando uma renda extra boa. Mês passado foram R$ 430.",
-                    lucro: "R$ 430/mês",
-                    tempo: "1 mês como parceiro"
+                    nicho: "Instagram - Carros",
+                    seguidores: "25k",
+                    tempo: "há 6 horas"
                   },
-                ].map((depo, i) => (
-                  <div key={i} className="flex-shrink-0 w-[400px] lg:w-[500px] mx-4">
-                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 lg:p-10 border border-white/20 shadow-2xl h-full hover:scale-105 hover:shadow-purple-500/50 transition-all duration-500 hover:border-purple-400/50">
+                ].map((cadastro, i) => (
+                  <div key={i} className="flex-shrink-0 w-[350px] lg:w-[420px] mx-4">
+                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 lg:p-8 border border-white/20 shadow-2xl h-full hover:scale-105 hover:shadow-orange-500/50 transition-all duration-500 hover:border-orange-400/50">
                       {/* Cabeçalho */}
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-purple-400/50 shadow-lg flex-shrink-0">
+                      <div className="flex items-center gap-4 mb-5">
+                        <div className="w-14 h-14 rounded-full overflow-hidden ring-4 ring-orange-400/50 shadow-lg flex-shrink-0">
                           <Image
-                            src={depo.foto}
-                            alt={depo.nome}
-                            width={64}
-                            height={64}
+                            src={cadastro.foto}
+                            alt={cadastro.nome}
+                            width={56}
+                            height={56}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div>
-                          <h3 className="text-white font-bold text-lg">{depo.nome}</h3>
-                          <p className="text-purple-200 text-sm">{depo.cidade}, {depo.estado}</p>
-                          <p className="text-purple-300 text-xs mt-1">{depo.tempo}</p>
+                        <div className="flex-1">
+                          <h3 className="text-white font-bold text-lg">{cadastro.nome}</h3>
+                          <p className="text-purple-200 text-sm">{cadastro.cidade}, {cadastro.estado}</p>
+                        </div>
+                        <div className="bg-green-500/20 border border-green-400/50 rounded-full px-3 py-1">
+                          <span className="text-green-300 text-xs font-bold">✓ ATIVO</span>
                         </div>
                       </div>
                       
-                      {/* Depoimento */}
-                      <div className="mb-6">
-                        <div className="text-6xl text-purple-400/30 leading-none mb-2">&ldquo;</div>
-                        <p className="text-white/90 leading-relaxed text-base italic">
-                          {depo.depoimento}
+                      {/* Info do nicho */}
+                      <div className="mb-4 bg-white/5 rounded-xl p-4 border border-white/10">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-2xl">📱</span>
+                          <span className="text-orange-300 font-bold text-sm">{cadastro.nicho}</span>
+                        </div>
+                        <p className="text-white/70 text-sm">
+                          <span className="text-white font-bold">{cadastro.seguidores}</span> seguidores
                         </p>
                       </div>
                       
-                      {/* Badge de Lucro */}
-                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 px-4 py-2 rounded-full">
-                        <span className="text-2xl">💰</span>
-                        <span className="text-white font-bold">{depo.lucro}</span>
+                      {/* Tempo de cadastro */}
+                      <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-400/30 px-4 py-2.5 rounded-full">
+                        <span className="text-lg">🕐</span>
+                        <span className="text-orange-300 font-bold text-sm">Cadastrado {cadastro.tempo}</span>
                       </div>
                     </div>
                   </div>
