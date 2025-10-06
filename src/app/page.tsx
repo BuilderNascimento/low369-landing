@@ -270,7 +270,8 @@ export default function Home() {
                 </p>
                 
                 <p className="text-sm sm:text-base text-white/60 mb-8 animate-[fadeInUp_1s_ease-out_1.2s_both]">
-                  Torne-se parceiro LOW369 e ganhe comissões por indicação em cada venda realizada.
+                  Torne-se parceiro LOW369 e ganhe comissões por indicação em cada venda realizada com o seu{" "}
+                  <span className="text-orange-400 font-black text-base sm:text-lg">CUPOM EXCLUSIVO</span>!
                 </p>
                 
                 {/* Badge de Urgência */}
