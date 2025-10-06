@@ -273,13 +273,10 @@ export default function Home() {
                   Torne-se parceiro LOW369 e ganhe comissões por indicação em cada venda realizada.
                 </p>
                 
-                {/* Badges de Urgência e Social Proof */}
-                <div className="mb-6 animate-[fadeInUp_1s_ease-out_1.4s_both] flex flex-wrap gap-3">
+                {/* Badge de Urgência */}
+                <div className="mb-6 animate-[fadeInUp_1s_ease-out_1.4s_both]">
                   <div className="inline-flex items-center gap-2 bg-red-500 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-2xl animate-pulse border-2 border-red-300">
                     🔥 Vagas Limitadas
-                  </div>
-                  <div className="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-xl border-2 border-green-400">
-                    ✅ 47 parceiros cadastrados este mês
                   </div>
                 </div>
                 
