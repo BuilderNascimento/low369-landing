@@ -1,6 +1,8 @@
 "use client";
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function Home() {
   const benefits = [
@@ -16,6 +18,8 @@ export default function Home() {
   const [page, setPage] = useState(0);
   const [followers, setFollowers] = useState(5000);
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   // Animação ao scroll
   useEffect(() => {
@@ -1042,34 +1046,52 @@ export default function Home() {
             <div className="relative">
               <form
                 className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border border-orange-200/50"
-onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  const form = e.currentTarget as HTMLFormElement;
-                  const data = new FormData(form);
-                  const nome = String(data.get('nome') || '');
-                  const email = String(data.get('email') || '');
-                  const whatsapp = String(data.get('whatsapp') || '');
-                  const cidade = String(data.get('cidade') || '');
-                  const estado = String(data.get('estado') || '');
-                  const rede1 = String(data.get('rede1') || '');
-                  const link1 = String(data.get('link1') || '');
-                  const rede2 = String(data.get('rede2') || '');
-                  const link2 = String(data.get('link2') || '');
-                  const rede3 = String(data.get('rede3') || '');
-                  const link3 = String(data.get('link3') || '');
-                  const audiencia = String(data.get('audiencia') || '');
-                  const nicho = String(data.get('nicho') || '');
-                  
-                  let redesText = '';
-                  if (rede1 && link1) redesText += `\n${rede1}: ${link1}`;
-                  if (rede2 && link2) redesText += `\n${rede2}: ${link2}`;
-                  if (rede3 && link3) redesText += `\n${rede3}: ${link3}`;
-                  
-                  const assunto = encodeURIComponent(`Cadastro Parceiro - ${nome}`);
-                  const corpo = encodeURIComponent(
-                    `Nome: ${nome}\nE-mail: ${email}\nWhatsApp: ${whatsapp}\nCidade: ${cidade}\nEstado: ${estado}\n\nREDES SOCIAIS:${redesText}\n\nAudiência: ${audiencia}\nNicho: ${nicho}`
-                  );
-                  window.location.href = `mailto:contato_low369@hotmail.com?subject=${assunto}&body=${corpo}`;
+                  setIsSubmitting(true);
+                  setSubmitMessage('');
+
+                  try {
+                    const form = e.currentTarget as HTMLFormElement;
+                    const data = new FormData(form);
+                    
+                    const leadData = {
+                      nome: String(data.get('nome') || ''),
+                      email: String(data.get('email') || ''),
+                      whatsapp: String(data.get('whatsapp') || ''),
+                      cidade: String(data.get('cidade') || ''),
+                      estado: String(data.get('estado') || ''),
+                      redesSociais: {
+                        ...(data.get('rede1') && data.get('link1') && {
+                          [String(data.get('rede1'))]: String(data.get('link1'))
+                        }),
+                        ...(data.get('rede2') && data.get('link2') && {
+                          [String(data.get('rede2'))]: String(data.get('link2'))
+                        }),
+                        ...(data.get('rede3') && data.get('link3') && {
+                          [String(data.get('rede3'))]: String(data.get('link3'))
+                        }),
+                      },
+                      audiencia: String(data.get('audiencia') || ''),
+                      nicho: String(data.get('nicho') || ''),
+                      timestamp: serverTimestamp(),
+                      status: 'novo'
+                    };
+
+                    await addDoc(collection(db, 'leads'), leadData);
+                    
+                    setSubmitMessage('✅ Cadastro realizado com sucesso! Entraremos em contato em breve.');
+                    form.reset();
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                  } catch (error) {
+                    console.error('Erro ao cadastrar:', error);
+                    setSubmitMessage('❌ Erro ao enviar cadastro. Tente novamente.');
+                  } finally {
+                    setIsSubmitting(false);
+                  }
                 }}
               >
                 <div className="grid gap-6">
@@ -1256,19 +1278,39 @@ onSubmit={(e) => {
                     </div>
                   </div>
                   
+                  {/* Mensagem de feedback */}
+                  {submitMessage && (
+                    <div className={`mb-6 p-4 rounded-2xl text-center font-bold ${
+                      submitMessage.includes('✅') 
+                        ? 'bg-green-100 text-green-800 border-2 border-green-300' 
+                        : 'bg-red-100 text-red-800 border-2 border-red-300'
+                    }`}>
+                      {submitMessage}
+                    </div>
+                  )}
+                  
                   <div className="mt-8 text-center">
                     <div className="relative inline-block">
                       <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full blur-lg animate-pulse opacity-75" />
                       
                       <button 
                         type="submit" 
-                        className="relative inline-flex items-center justify-center px-12 py-5 text-xl font-bold text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-2 group overflow-hidden"
+                        disabled={isSubmitting}
+                        className="relative inline-flex items-center justify-center px-12 py-5 text-xl font-bold text-white bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 rounded-full shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-2 group overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:translate-y-0"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         
                         <span className="relative z-10 flex items-center gap-3 animate-[float_4s_ease-in-out_infinite]">
-                          🚀 Enviar cadastro
-                          <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                          {isSubmitting ? (
+                            <>
+                              ⏳ Enviando...
+                            </>
+                          ) : (
+                            <>
+                              🚀 Enviar cadastro
+                              <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                            </>
+                          )}
                         </span>
                         
                         <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white/20 opacity-0 group-hover:animate-[shine_0.75s] group-hover:opacity-100" />
