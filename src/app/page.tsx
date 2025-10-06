@@ -799,7 +799,7 @@ export default function Home() {
                 </span>
               </h2>
               <p className="mt-6 text-lg sm:text-xl text-white/80 font-medium">
-                Pessoas reais garantindo sua vaga para o <span className="text-orange-400 font-bold">lançamento dia 18</span> 🔥
+                Junte-se aos <span className="text-orange-400 font-bold">novos parceiros</span> que já garantiram sua vaga 🚀
               </p>
             </div>
           </div>
@@ -846,15 +846,6 @@ export default function Home() {
                     tempo: "há 4 horas"
                   },
                   {
-                    nome: "Felipe R.",
-                    cidade: "Belo Horizonte",
-                    estado: "MG",
-                    foto: "/rafael.jpg",
-                    nicho: "Instagram - Carros",
-                    seguidores: "25k",
-                    tempo: "há 6 horas"
-                  },
-                  {
                     nome: "Rodrigo A.",
                     cidade: "Recife",
                     estado: "PE",
@@ -862,24 +853,6 @@ export default function Home() {
                     nicho: "Instagram - Skate",
                     seguidores: "3.8k",
                     tempo: "há 7 horas"
-                  },
-                  {
-                    nome: "Thiago L.",
-                    cidade: "Curitiba",
-                    estado: "PR",
-                    foto: "/marcelo.jpg",
-                    nicho: "YouTube - Rebaixados",
-                    seguidores: "52k",
-                    tempo: "há 8 horas"
-                  },
-                  {
-                    nome: "Juliana P.",
-                    cidade: "Brasília",
-                    estado: "DF",
-                    foto: "/julia.jpg",
-                    nicho: "Instagram - Fashion",
-                    seguidores: "41k",
-                    tempo: "há 11 horas"
                   },
                   // Duplicar para efeito infinito
                   {
