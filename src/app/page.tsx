@@ -1322,7 +1322,10 @@ export default function Home() {
 
       <footer className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-8 text-xs text-foreground/70 flex items-center justify-between">
-          <span>© {new Date().getFullYear()} LOW369 — Todos os direitos reservados.</span>
+          <div className="flex items-center gap-4">
+            <span>© {new Date().getFullYear()} LOW369 — Todos os direitos reservados.</span>
+            <a href="/admin" className="text-foreground/30 hover:text-foreground/50 transition-colors text-[10px]">v1.0</a>
+          </div>
           <a href="https://reserva.ink/low369" target="_blank" rel="noopener noreferrer" className="hover:underline">Loja</a>
         </div>
       </footer>
