@@ -63,7 +63,7 @@ export default function Home() {
     if (current !== page) setPage(current);
   };
 
-  // Autoplay do carrossel - avança automaticamente a cada 4 segundos
+  // Autoplay do carrossel - avança automaticamente a cada 6 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setPage((currentPage) => {
@@ -71,7 +71,7 @@ export default function Home() {
         scrollTo(nextPage);
         return nextPage;
       });
-    }, 4000); // Muda a cada 4 segundos
+    }, 6000); // Muda a cada 6 segundos (reduzido de 4s)
 
     return () => clearInterval(interval);
   }, [totalPages]);
@@ -273,10 +273,13 @@ export default function Home() {
                   Torne-se parceiro LOW369 e ganhe comissões por indicação em cada venda realizada.
                 </p>
                 
-                {/* Badge de Urgência - Destacado */}
-                <div className="mb-6 animate-[fadeInUp_1s_ease-out_1.4s_both]">
+                {/* Badges de Urgência e Social Proof */}
+                <div className="mb-6 animate-[fadeInUp_1s_ease-out_1.4s_both] flex flex-wrap gap-3">
                   <div className="inline-flex items-center gap-2 bg-red-500 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-2xl animate-pulse border-2 border-red-300">
-                    🔥 Vagas Limitadas - Cadastre-se Agora!
+                    🔥 Vagas Limitadas
+                  </div>
+                  <div className="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-xl border-2 border-green-400">
+                    ✅ 47 parceiros cadastrados este mês
                   </div>
                 </div>
                 
@@ -966,10 +969,14 @@ export default function Home() {
             
             <div className="grid gap-6 max-w-4xl lg:max-w-6xl mx-auto w-full">
               {[
-                { q: "Quanto ganho por venda?", a: "Pagamos comissão por cada venda gerada com seu link/cupom." },
+                { q: "Quanto ganho por venda?", a: "Pagamos comissão por cada venda gerada com seu link/cupom exclusivo." },
                 { q: "Quando recebo?", a: "Pagamentos mensais conforme regulamento enviado após aprovação." },
                 { q: "Quem pode participar?", a: "Criadores com presença ativa em redes sociais, blogs ou portais." },
-                { q: "Preciso pagar algo?", a: "Não. A participação é 100% gratuita." },
+                { q: "Preciso pagar algo?", a: "Não. A participação é 100% gratuita, sem taxas ou mensalidades." },
+                { q: "Qual o ticket médio das camisetas?", a: "O ticket médio é de R$ 100, com produtos de alta qualidade que convertem muito bem." },
+                { q: "Vocês fazem o envio?", a: "Sim! Cuidamos de toda a logística. Você só divulga, nós entregamos." },
+                { q: "Preciso ter estoque?", a: "Não! Você não precisa investir em estoque. Trabalhamos com dropshipping completo." },
+                { q: "Como funciona o suporte?", a: "Suporte dedicado via WhatsApp e materiais exclusivos para maximizar suas vendas." },
               ].map((f, i) => (
                 <details 
                   key={i} 
