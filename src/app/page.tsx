@@ -1078,6 +1078,58 @@ export default function Home() {
                     const form = e.currentTarget as HTMLFormElement;
                     const data = new FormData(form);
                     
+                    // Validações
+                    const rede1 = data.get('rede1');
+                    const link1 = data.get('link1');
+                    const seguidores1 = data.get('seguidores1');
+                    const rede2 = data.get('rede2');
+                    const link2 = data.get('link2');
+                    const seguidores2 = data.get('seguidores2');
+                    const rede3 = data.get('rede3');
+                    const link3 = data.get('link3');
+                    const seguidores3 = data.get('seguidores3');
+                    const audiencia = data.get('audiencia');
+                    const nicho = data.get('nicho');
+                    
+                    // Validar que pelo menos 1 rede social foi preenchida
+                    if (!rede1 && !rede2 && !rede3) {
+                      setSubmitMessage('❌ Por favor, preencha pelo menos 1 rede social.');
+                      setIsSubmitting(false);
+                      return;
+                    }
+                    
+                    // Validar seguidores se a rede foi preenchida
+                    if (rede1 && link1 && !seguidores1) {
+                      setSubmitMessage('❌ Por favor, preencha a quantidade de seguidores da primeira rede social.');
+                      setIsSubmitting(false);
+                      return;
+                    }
+                    
+                    if (rede2 && link2 && !seguidores2) {
+                      setSubmitMessage('❌ Por favor, preencha a quantidade de seguidores da segunda rede social.');
+                      setIsSubmitting(false);
+                      return;
+                    }
+                    
+                    if (rede3 && link3 && !seguidores3) {
+                      setSubmitMessage('❌ Por favor, preencha a quantidade de seguidores da terceira rede social.');
+                      setIsSubmitting(false);
+                      return;
+                    }
+                    
+                    // Validar audiência e nicho
+                    if (!audiencia) {
+                      setSubmitMessage('❌ Por favor, preencha o tamanho da audiência (visualizações story).');
+                      setIsSubmitting(false);
+                      return;
+                    }
+                    
+                    if (!nicho) {
+                      setSubmitMessage('❌ Por favor, preencha o nicho principal.');
+                      setIsSubmitting(false);
+                      return;
+                    }
+                    
                     const leadData = {
                       nome: String(data.get('nome') || ''),
                       email: String(data.get('email') || ''),
@@ -1336,6 +1388,7 @@ export default function Home() {
                         <input 
                           id="audiencia" 
                           name="audiencia" 
+                          required
                           placeholder="Ex: 25k seguidores, 10k visualizações" 
                           className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-400/20 transition-all duration-300" 
                         />
@@ -1348,6 +1401,7 @@ export default function Home() {
                       <input 
                         id="nicho" 
                         name="nicho" 
+                        required
                         placeholder="Ex: motos, JDM, streetwear, lifestyle" 
                         className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-pink-400 focus:bg-white focus:ring-4 focus:ring-pink-400/20 transition-all duration-300" 
                       />
