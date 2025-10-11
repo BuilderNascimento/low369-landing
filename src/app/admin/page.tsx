@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
-import { collection, query, orderBy, onSnapshot, doc, updateDoc } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 
 interface Lead {
   id: string;
@@ -15,6 +15,7 @@ interface Lead {
   nicho: string;
   timestamp: { toDate?: () => Date } | null;
   status: string;
+  anotacoes?: string;
 }
 
 export default function AdminDashboard() {
@@ -22,9 +23,11 @@ export default function AdminDashboard() {
   const [filteredLeads, setFilteredLeads] = useState<Lead[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('todos');
+  const [dateFilter, setDateFilter] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
+  const [leadNotes, setLeadNotes] = useState<Record<string, string>>({});
 
   // Senha de acesso (você pode mudar depois)
   const ADMIN_PASSWORD = 'low369admin';
@@ -61,8 +64,17 @@ export default function AdminDashboard() {
       filtered = filtered.filter(lead => lead.status === statusFilter);
     }
 
+    if (dateFilter) {
+      filtered = filtered.filter(lead => {
+        const leadDate = lead.timestamp?.toDate?.();
+        if (!leadDate) return false;
+        const filterDate = new Date(dateFilter);
+        return leadDate.toDateString() === filterDate.toDateString();
+      });
+    }
+
     setFilteredLeads(filtered);
-  }, [searchTerm, statusFilter, leads]);
+  }, [searchTerm, statusFilter, dateFilter, leads]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,6 +90,29 @@ export default function AdminDashboard() {
       await updateDoc(doc(db, 'leads', leadId), { status: newStatus });
     } catch (error) {
       console.error('Erro ao atualizar status:', error);
+    }
+  };
+
+  const deleteLead = async (leadId: string) => {
+    if (!confirm('Tem certeza que deseja excluir este lead permanentemente?')) return;
+    
+    try {
+      await deleteDoc(doc(db, 'leads', leadId));
+      setSelectedLead(null);
+      alert('Lead excluído com sucesso!');
+    } catch (error) {
+      console.error('Erro ao excluir lead:', error);
+      alert('Erro ao excluir lead.');
+    }
+  };
+
+  const saveLeadNotes = async (leadId: string, notes: string) => {
+    try {
+      await updateDoc(doc(db, 'leads', leadId), { anotacoes: notes });
+      alert('Anotações salvas com sucesso!');
+    } catch (error) {
+      console.error('Erro ao salvar anotações:', error);
+      alert('Erro ao salvar anotações.');
     }
   };
 
@@ -200,7 +235,7 @@ export default function AdminDashboard() {
 
         {/* Filters */}
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 mb-6 border border-white/20">
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-4 gap-4">
             <div>
               <label className="block text-white text-sm font-semibold mb-2">🔍 Buscar</label>
               <input
@@ -224,6 +259,16 @@ export default function AdminDashboard() {
                 <option value="aprovado">Aprovado</option>
                 <option value="rejeitado">Rejeitado</option>
               </select>
+            </div>
+            
+            <div>
+              <label className="block text-white text-sm font-semibold mb-2">📅 Data</label>
+              <input
+                type="date"
+                value={dateFilter}
+                onChange={(e) => setDateFilter(e.target.value)}
+                className="w-full h-12 rounded-xl bg-white/20 border border-white/30 px-4 text-white focus:bg-white/30 focus:border-orange-400 transition-all"
+              />
             </div>
             
             <div className="flex items-end">
@@ -347,6 +392,23 @@ export default function AdminDashboard() {
                 </div>
               </div>
               
+              {/* Campo de Anotações */}
+              <div>
+                <label className="text-sm font-semibold text-gray-600 mb-2 block">📝 Anotações de Pré-Análise</label>
+                <textarea
+                  value={leadNotes[selectedLead.id] || selectedLead.anotacoes || ''}
+                  onChange={(e) => setLeadNotes({...leadNotes, [selectedLead.id]: e.target.value})}
+                  placeholder="Adicione suas anotações sobre este lead..."
+                  className="w-full h-32 rounded-xl border-2 border-gray-300 px-4 py-3 text-gray-800 resize-none focus:border-orange-400 focus:ring-4 focus:ring-orange-400/20 transition-all"
+                />
+                <button
+                  onClick={() => saveLeadNotes(selectedLead.id, leadNotes[selectedLead.id] || selectedLead.anotacoes || '')}
+                  className="mt-2 px-6 py-2 rounded-xl bg-blue-500 text-white font-bold hover:bg-blue-600 transition-colors"
+                >
+                  💾 Salvar Anotações
+                </button>
+              </div>
+              
               <div>
                 <label className="text-sm font-semibold text-gray-600 mb-2 block">Alterar Status</label>
                 <div className="flex gap-2">
@@ -369,6 +431,19 @@ export default function AdminDashboard() {
                     ❌ Rejeitar
                   </button>
                 </div>
+              </div>
+              
+              {/* Botão de Excluir Lead */}
+              <div className="pt-4 border-t border-gray-200">
+                <button
+                  onClick={() => deleteLead(selectedLead.id)}
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-red-600 to-red-700 text-white font-bold hover:from-red-700 hover:to-red-800 transition-all shadow-lg hover:shadow-xl"
+                >
+                  🗑️ Excluir Lead Permanentemente
+                </button>
+                <p className="text-xs text-gray-500 text-center mt-2">
+                  ⚠️ Esta ação não pode ser desfeita
+                </p>
               </div>
             </div>
           </div>

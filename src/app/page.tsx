@@ -8,7 +8,7 @@ export default function Home() {
   const benefits = [
     { title: "Lucro por resultado", desc: "Ganhos por comissão em cada venda realizada com seu link ou cupom." },
     { title: "Processo simplificado", desc: "Sem burocracia. Cadastro rápido e aprovação ágil." },
-    { title: "Sistema fácil de usar", desc: "Painel simples para acompanhar cliques, vendas e comissões." },
+    { title: "Sistema fácil de usar", desc: "A cada venda realizada você é notificado via email, relatórios mensais e trimestrais de sua evolução serão disponibilizados para estudos e análises." },
     { title: "Conteúdos prontos", desc: "Materiais de divulgação e criativos para suas redes." },
     { title: "Apoio especializado", desc: "Suporte dedicado que maximizam seus resultados." },
     { title: "Evolução compartilhada", desc: "Crescemos juntos e valorizamos seu desenvolvimento." },
@@ -266,7 +266,7 @@ export default function Home() {
                 
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-6 animate-[fadeInUp_1s_ease-out_0.8s_both]">
                   Use sua influência nas redes para{" "}
-                  <span className="text-orange-400 font-bold">MONETIZAR SEU ALCANCE</span> e ajudar sua audiência a comprar com confiança.
+                  <span className="text-orange-400 font-bold">MONETIZAR SEU ALCANCE</span> e ajudar sua audiência a comprar com <span className="text-orange-400 font-bold">SEGURANÇA</span>.
                 </p>
                 
                 <p className="text-sm sm:text-base text-white/60 mb-8 animate-[fadeInUp_1s_ease-out_1.2s_both]">
@@ -429,13 +429,33 @@ export default function Home() {
               </div>
               
               <div className="bg-gradient-to-br from-green-500 via-emerald-500 to-green-600 rounded-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300">
-                <p className="text-white/90 text-lg mb-2">💰 Ganho Potencial Mensal</p>
+                <p className="text-white/90 text-lg mb-2">💰 Ganho Estimado Mensal</p>
                 <p className="text-5xl sm:text-6xl font-black text-white mb-2">
                   R$ {calculateEarnings(followers)}
                 </p>
-                <p className="text-green-100 text-sm">
-                  *Baseado em 3% de conversão e comissões sobre ticket médio de R$ 100
-                </p>
+                <div className="mt-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 text-left space-y-2">
+                  <p className="text-green-100 text-sm font-bold mb-3">📊 Baseado em 1% a 3% em conversão de venda!</p>
+                  
+                  <div className="space-y-1.5">
+                    <p className="text-white text-sm font-semibold">
+                      <span className="bg-white/20 px-2 py-1 rounded">Comissão mínima:</span> R$ 20,00 por Cupom utilizado
+                    </p>
+                    
+                    <p className="text-white text-sm font-semibold">
+                      <span className="bg-white/20 px-2 py-1 rounded">Comissão máxima:</span> Sem limite! Quanto mais itens na compra, maior sua comissão.
+                    </p>
+                    
+                    <div className="mt-3 pt-3 border-t border-white/20">
+                      <p className="text-white text-xs font-bold mb-2">💡 Exemplo prático de ganhos:</p>
+                      <div className="space-y-1 text-green-100 text-xs">
+                        <p>• 1 UN = <span className="text-white font-bold">R$ 20,00</span></p>
+                        <p>• 2 UN = <span className="text-white font-bold">R$ 25,00</span></p>
+                        <p>• 3 UN = <span className="text-white font-bold">R$ 30,00</span></p>
+                        <p className="text-yellow-200 font-semibold mt-2">E assim por diante! 🚀</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <div className="mt-8 text-center">
@@ -479,7 +499,7 @@ export default function Home() {
               </h2>
               
               <p className="mt-3 sm:mt-4 text-base sm:text-lg lg:text-xl text-white/80 font-medium animate-[fadeInUp_1s_ease-out_0.8s_both] px-4">
-                Descubra as vantagens exclusivas que vão transformar sua influência em renda
+                Descubra as vantagens exclusivas que vão transformar sua <span className="text-orange-400 font-bold">INFLUÊNCIA EM RENDA</span>
               </p>
               
               <div className="flex justify-center mt-4 sm:mt-6">
@@ -620,7 +640,7 @@ export default function Home() {
               {[
                 { 
                   n: "1", 
-                  t: "Cadastre-se grátis", 
+                  t: "Cadastro rápido e fácil", 
                   d: "Preencha o formulário com seus dados e links de redes sociais.",
                   icon: "📝",
                   color: "from-blue-500 to-cyan-500"
@@ -700,7 +720,7 @@ export default function Home() {
             </div>
             
             {/* Cards com suas imagens personalizadas */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {[
                 { 
                   t: "Cupom exclusivo", 
@@ -724,6 +744,12 @@ export default function Home() {
                   t: "Regulamento completo", 
                   d: "Transparência total sobre regras e pagamento de comissões garantidas.",
                   bgColor: "from-green-600 to-emerald-600",
+                  image: "/forms-novo.png"
+                },
+                { 
+                  t: "Grupo de afiliados personalizado", 
+                  d: "Grupo para debater estratégias comprovadas e maximizar sua confiança gerando mais resultados.",
+                  bgColor: "from-pink-600 to-rose-600",
                   image: "/forms-novo.png"
                 },
               ].map((c, i) => (
@@ -815,8 +841,8 @@ export default function Home() {
                     estado: "SC",
                     foto: "/rafael.jpg",
                     nicho: "Instagram - CARROS REBAIXADOS",
-                    seguidores: "1.5k",
-                    tempo: "há 1 hora"
+                    seguidores: "47k",
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Carlos M.",
@@ -824,26 +850,26 @@ export default function Home() {
                     estado: "SP",
                     foto: "/marcelo.jpg",
                     nicho: "TikTok - LIFESTYLE AUTOMOTIVO",
-                    seguidores: "18k",
-                    tempo: "há 2 horas"
+                    seguidores: "8k",
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Beatriz F.",
                     cidade: "Goiânia",
                     estado: "GO",
-                    foto: "/amanda.jpg",
-                    nicho: "Instagram - MOTOS DE GRAU",
-                    seguidores: "5k",
-                    tempo: "há 3 horas"
+                    foto: "/Beatriz.jpg",
+                    nicho: "Instagram - Moto 244",
+                    seguidores: "371k",
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Marina S.",
                     cidade: "Rio de Janeiro",
                     estado: "RJ",
-                    foto: "/julia.jpg",
+                    foto: "/marina.avif",
                     nicho: "TikTok - MOTOS E MANOBRAS",
                     seguidores: "32k",
-                    tempo: "há 4 horas"
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Rodrigo A.",
@@ -852,7 +878,7 @@ export default function Home() {
                     foto: "/diogo.jpg",
                     nicho: "YouTube - CARROS TUNADOS",
                     seguidores: "3.8k",
-                    tempo: "há 7 horas"
+                    tempo: "Cadastro recente"
                   },
                   // Duplicar para efeito infinito
                   {
@@ -861,8 +887,8 @@ export default function Home() {
                     estado: "SC",
                     foto: "/rafael.jpg",
                     nicho: "Instagram - CARROS REBAIXADOS",
-                    seguidores: "1.5k",
-                    tempo: "há 1 hora"
+                    seguidores: "47k",
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Carlos M.",
@@ -870,26 +896,26 @@ export default function Home() {
                     estado: "SP",
                     foto: "/marcelo.jpg",
                     nicho: "TikTok - LIFESTYLE AUTOMOTIVO",
-                    seguidores: "18k",
-                    tempo: "há 2 horas"
+                    seguidores: "8k",
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Beatriz F.",
                     cidade: "Goiânia",
                     estado: "GO",
-                    foto: "/amanda.jpg",
-                    nicho: "Instagram - MOTOS DE GRAU",
-                    seguidores: "5k",
-                    tempo: "há 3 horas"
+                    foto: "/Beatriz.jpg",
+                    nicho: "Instagram - Moto 244",
+                    seguidores: "371k",
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Marina S.",
                     cidade: "Rio de Janeiro",
                     estado: "RJ",
-                    foto: "/julia.jpg",
+                    foto: "/marina.avif",
                     nicho: "TikTok - MOTOS E MANOBRAS",
                     seguidores: "32k",
-                    tempo: "há 4 horas"
+                    tempo: "Cadastro recente"
                   },
                   {
                     nome: "Rodrigo A.",
@@ -898,7 +924,7 @@ export default function Home() {
                     foto: "/diogo.jpg",
                     nicho: "YouTube - CARROS TUNADOS",
                     seguidores: "3.8k",
-                    tempo: "há 7 horas"
+                    tempo: "Cadastro recente"
                   },
                 ].map((cadastro, i) => (
                   <div key={i} className="flex-shrink-0 w-[350px] lg:w-[420px] mx-4">
@@ -990,12 +1016,13 @@ export default function Home() {
             
             <div className="grid gap-6 max-w-4xl lg:max-w-6xl mx-auto w-full">
               {[
-                { q: "Quanto ganho por venda?", a: "Pagamos comissão por cada venda gerada com seu link/cupom exclusivo." },
+                { q: "Quanto ganho por venda?", a: "Pagamos comissão por cada venda gerada com seu cupom exclusivo." },
                 { q: "Quando recebo?", a: "Pagamentos mensais conforme regulamento enviado após aprovação." },
                 { q: "Quem pode participar?", a: "Criadores com presença ativa em redes sociais, blogs ou portais." },
                 { q: "Preciso pagar algo?", a: "Não. A participação é 100% gratuita, sem taxas ou mensalidades." },
+                { q: "Tenho algum tipo de meta?", a: "Os afiliados tem como meta mínima fazer com que o seu cupom seja utilizado no mínimo 5 vezes em 30 dias, ou a sua vaga de afiliado será disponibilizada para outro afiliado de forma automática." },
                 { q: "Qual o ticket médio das camisetas?", a: "O ticket médio é de R$ 100, com produtos de alta qualidade que convertem muito bem." },
-                { q: "Vocês fazem o envio?", a: "Sim! Cuidamos de toda a logística. Você só divulga, nós entregamos." },
+                { q: "Vocês fazem o envio?", a: "Sim! Cuidamos de toda a logística. Você só divulga, nós cuidamos de todos os processos." },
                 { q: "Preciso ter estoque?", a: "Não! Você não precisa investir em estoque. Trabalhamos com dropshipping completo." },
                 { q: "Como funciona o suporte?", a: "Suporte dedicado via WhatsApp e materiais exclusivos para maximizar suas vendas." },
               ].map((f, i) => (
@@ -1030,7 +1057,7 @@ export default function Home() {
                   Cadastre-se
                 </span>
                 <span className="block bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-600 bg-clip-text text-transparent drop-shadow-lg animate-[float_4s_ease-in-out_infinite_0.3s] mt-2">
-                  agora
+                  agora 👇
                 </span>
               </h2>
               
