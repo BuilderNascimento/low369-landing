@@ -1329,12 +1329,17 @@ export default function Home() {
                       <label className="text-sm font-semibold text-gray-700 flex items-center gap-2" htmlFor="audiencia">
                         <span className="text-cyan-500">📊</span> Tamanho da audiência
                       </label>
-                      <input 
-                        id="audiencia" 
-                        name="audiencia" 
-                        placeholder="Ex: 25k seguidores, 10k visualizações" 
-                        className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-400/20 transition-all duration-300" 
-                      />
+                      <div>
+                        <label className="text-xs text-cyan-700 font-semibold ml-1 mb-1 block">
+                          📈 Visualização story diária de todas as redes juntas
+                        </label>
+                        <input 
+                          id="audiencia" 
+                          name="audiencia" 
+                          placeholder="Ex: 25k seguidores, 10k visualizações" 
+                          className="w-full h-12 rounded-2xl border-2 border-gray-200 bg-gray-50/50 px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-cyan-400 focus:bg-white focus:ring-4 focus:ring-cyan-400/20 transition-all duration-300" 
+                        />
+                      </div>
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-semibold text-gray-700 flex items-center gap-2" htmlFor="nicho">
