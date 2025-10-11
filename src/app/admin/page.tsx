@@ -10,7 +10,7 @@ interface Lead {
   whatsapp: string;
   cidade: string;
   estado: string;
-  redesSociais: Record<string, string>;
+  redesSociais: Record<string, string | { link: string; seguidores: string }>;
   audiencia: string;
   nicho: string;
   timestamp: { toDate?: () => Date } | null;
