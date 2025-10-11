@@ -124,7 +124,10 @@ export default function AdminDashboard() {
       lead.whatsapp,
       lead.cidade,
       lead.estado,
-      Object.entries(lead.redesSociais || {}).map(([k, v]) => `${k}: ${v}`).join('; '),
+      Object.entries(lead.redesSociais || {}).map(([k, v]) => {
+        if (typeof v === 'string') return `${k}: ${v}`;
+        return `${k}: ${v.link} (${v.seguidores || 'N/A'} seguidores)`;
+      }).join('; '),
       lead.audiencia,
       lead.nicho,
       lead.timestamp?.toDate?.()?.toLocaleString() || 'N/A',
@@ -369,15 +372,28 @@ export default function AdminDashboard() {
               
               <div>
                 <label className="text-sm font-semibold text-gray-600">Redes Sociais</label>
-                <div className="space-y-2 mt-2">
-                  {Object.entries(selectedLead.redesSociais || {}).map(([rede, link]) => (
-                    <div key={rede} className="flex items-center gap-2">
-                      <span className="font-semibold text-gray-700">{rede}:</span>
-                      <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                        {link}
-                      </a>
-                    </div>
-                  ))}
+                <div className="space-y-3 mt-2">
+                  {Object.entries(selectedLead.redesSociais || {}).map(([rede, dados]) => {
+                    // Compatibilidade com formato antigo (string) e novo (objeto)
+                    const link = typeof dados === 'string' ? dados : dados.link;
+                    const seguidores = typeof dados === 'object' && dados.seguidores ? dados.seguidores : '';
+                    
+                    return (
+                      <div key={rede} className="bg-gray-50 p-3 rounded-xl border border-gray-200">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="font-semibold text-gray-700">{rede}:</span>
+                          <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                            {link}
+                          </a>
+                        </div>
+                        {seguidores && (
+                          <div className="text-sm text-gray-600 ml-0">
+                            👥 <span className="font-semibold">{seguidores}</span> seguidores
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               

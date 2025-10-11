@@ -1086,13 +1086,22 @@ export default function Home() {
                       estado: String(data.get('estado') || ''),
                       redesSociais: {
                         ...(data.get('rede1') && data.get('link1') && {
-                          [String(data.get('rede1'))]: String(data.get('link1'))
+                          [String(data.get('rede1'))]: {
+                            link: String(data.get('link1')),
+                            seguidores: String(data.get('seguidores1') || '')
+                          }
                         }),
                         ...(data.get('rede2') && data.get('link2') && {
-                          [String(data.get('rede2'))]: String(data.get('link2'))
+                          [String(data.get('rede2'))]: {
+                            link: String(data.get('link2')),
+                            seguidores: String(data.get('seguidores2') || '')
+                          }
                         }),
                         ...(data.get('rede3') && data.get('link3') && {
-                          [String(data.get('rede3'))]: String(data.get('link3'))
+                          [String(data.get('rede3'))]: {
+                            link: String(data.get('link3')),
+                            seguidores: String(data.get('seguidores3') || '')
+                          }
                         }),
                       },
                       audiencia: String(data.get('audiencia') || ''),
@@ -1222,56 +1231,80 @@ export default function Home() {
                     </h3>
                     
                     {/* Rede Social 1 */}
-                    <div className="grid grid-cols-3 gap-3">
-                      <select 
-                        name="rede1" 
-                        className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
-                      >
-                        <option value="">Selecione</option>
-                        <option value="Instagram">📸 Instagram</option>
-                        <option value="Facebook">👥 Facebook</option>
-                        <option value="TikTok">🎵 TikTok</option>
-                      </select>
+                    <div className="space-y-2">
+                      <div className="grid grid-cols-3 gap-3">
+                        <select 
+                          name="rede1" 
+                          className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                        >
+                          <option value="">Selecione</option>
+                          <option value="Instagram">📸 Instagram</option>
+                          <option value="Facebook">👥 Facebook</option>
+                          <option value="TikTok">🎵 TikTok</option>
+                        </select>
+                        <input 
+                          name="link1" 
+                          placeholder="@seuperfil ou URL" 
+                          className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        />
+                      </div>
                       <input 
-                        name="link1" 
-                        placeholder="@seuperfil ou URL" 
-                        className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        name="seguidores1" 
+                        type="text"
+                        placeholder="Ex: 5k, 1.2k, 25k seguidores" 
+                        className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
                       />
                     </div>
                     
                     {/* Rede Social 2 */}
-                    <div className="grid grid-cols-3 gap-3">
-                      <select 
-                        name="rede2" 
-                        className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
-                      >
-                        <option value="">Selecione</option>
-                        <option value="Instagram">📸 Instagram</option>
-                        <option value="Facebook">👥 Facebook</option>
-                        <option value="TikTok">🎵 TikTok</option>
-                      </select>
+                    <div className="space-y-2">
+                      <div className="grid grid-cols-3 gap-3">
+                        <select 
+                          name="rede2" 
+                          className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                        >
+                          <option value="">Selecione</option>
+                          <option value="Instagram">📸 Instagram</option>
+                          <option value="Facebook">👥 Facebook</option>
+                          <option value="TikTok">🎵 TikTok</option>
+                        </select>
+                        <input 
+                          name="link2" 
+                          placeholder="@seuperfil ou URL" 
+                          className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        />
+                      </div>
                       <input 
-                        name="link2" 
-                        placeholder="@seuperfil ou URL" 
-                        className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        name="seguidores2" 
+                        type="text"
+                        placeholder="Ex: 5k, 1.2k, 25k seguidores" 
+                        className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
                       />
                     </div>
                     
                     {/* Rede Social 3 */}
-                    <div className="grid grid-cols-3 gap-3">
-                      <select 
-                        name="rede3" 
-                        className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
-                      >
-                        <option value="">Selecione</option>
-                        <option value="Instagram">📸 Instagram</option>
-                        <option value="Facebook">👥 Facebook</option>
-                        <option value="TikTok">🎵 TikTok</option>
-                      </select>
+                    <div className="space-y-2">
+                      <div className="grid grid-cols-3 gap-3">
+                        <select 
+                          name="rede3" 
+                          className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                        >
+                          <option value="">Selecione</option>
+                          <option value="Instagram">📸 Instagram</option>
+                          <option value="Facebook">👥 Facebook</option>
+                          <option value="TikTok">🎵 TikTok</option>
+                        </select>
+                        <input 
+                          name="link3" 
+                          placeholder="@seuperfil ou URL" 
+                          className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        />
+                      </div>
                       <input 
-                        name="link3" 
-                        placeholder="@seuperfil ou URL" 
-                        className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        name="seguidores3" 
+                        type="text"
+                        placeholder="Ex: 5k, 1.2k, 25k seguidores" 
+                        className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
                       />
                     </div>
                   </div>
