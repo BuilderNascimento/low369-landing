@@ -1248,12 +1248,17 @@ export default function Home() {
                           className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
                         />
                       </div>
-                      <input 
-                        name="seguidores1" 
-                        type="text"
-                        placeholder="Ex: 5k, 1.2k, 25k seguidores" 
-                        className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
-                      />
+                      <div>
+                        <label className="text-xs text-purple-700 font-semibold ml-1 mb-1 block">
+                          👥 Quantidade de seguidores desta rede
+                        </label>
+                        <input 
+                          name="seguidores1" 
+                          type="text"
+                          placeholder="Ex: 5k, 1.2k, 25k seguidores" 
+                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        />
+                      </div>
                     </div>
                     
                     {/* Rede Social 2 */}
@@ -1274,12 +1279,17 @@ export default function Home() {
                           className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
                         />
                       </div>
-                      <input 
-                        name="seguidores2" 
-                        type="text"
-                        placeholder="Ex: 5k, 1.2k, 25k seguidores" 
-                        className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
-                      />
+                      <div>
+                        <label className="text-xs text-purple-700 font-semibold ml-1 mb-1 block">
+                          👥 Quantidade de seguidores desta rede
+                        </label>
+                        <input 
+                          name="seguidores2" 
+                          type="text"
+                          placeholder="Ex: 5k, 1.2k, 25k seguidores" 
+                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        />
+                      </div>
                     </div>
                     
                     {/* Rede Social 3 */}
@@ -1300,12 +1310,17 @@ export default function Home() {
                           className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
                         />
                       </div>
-                      <input 
-                        name="seguidores3" 
-                        type="text"
-                        placeholder="Ex: 5k, 1.2k, 25k seguidores" 
-                        className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
-                      />
+                      <div>
+                        <label className="text-xs text-purple-700 font-semibold ml-1 mb-1 block">
+                          👥 Quantidade de seguidores desta rede
+                        </label>
+                        <input 
+                          name="seguidores3" 
+                          type="text"
+                          placeholder="Ex: 5k, 1.2k, 25k seguidores" 
+                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                        />
+                      </div>
                     </div>
                   </div>
                   
