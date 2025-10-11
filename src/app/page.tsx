@@ -1307,8 +1307,11 @@ export default function Home() {
                         <input 
                           name="seguidores1" 
                           type="text"
+                          inputMode="numeric"
+                          pattern="[0-9.,kKmM]*"
                           placeholder="Ex: 5k, 1.2k, 25k seguidores" 
-                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                          title="Use apenas números. Ex: 5k, 1.2k, 25000"
                         />
                       </div>
                     </div>
@@ -1338,8 +1341,11 @@ export default function Home() {
                         <input 
                           name="seguidores2" 
                           type="text"
+                          inputMode="numeric"
+                          pattern="[0-9.,kKmM]*"
                           placeholder="Ex: 5k, 1.2k, 25k seguidores" 
-                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                          title="Use apenas números. Ex: 5k, 1.2k, 25000"
                         />
                       </div>
                     </div>
@@ -1369,8 +1375,11 @@ export default function Home() {
                         <input 
                           name="seguidores3" 
                           type="text"
+                          inputMode="numeric"
+                          pattern="[0-9.,kKmM]*"
                           placeholder="Ex: 5k, 1.2k, 25k seguidores" 
-                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                          className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                          title="Use apenas números. Ex: 5k, 1.2k, 25000"
                         />
                       </div>
                     </div>
