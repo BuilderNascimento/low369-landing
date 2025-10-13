@@ -744,7 +744,7 @@ export default function Home() {
                   t: "Grupo de afiliados personalizado", 
                   d: "Grupo para debater estratégias comprovadas e maximizar sua confiança gerando mais resultados.",
                   bgColor: "from-pink-600 to-rose-600",
-                  image: "/forms-novo.png"
+                  image: "/lead.png"
                 },
               ].map((c, i) => (
                 <div 
