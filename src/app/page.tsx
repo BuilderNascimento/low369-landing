@@ -720,19 +720,13 @@ export default function Home() {
             </div>
             
             {/* Cards com suas imagens personalizadas */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { 
                   t: "Cupom exclusivo", 
                   d: "Um cupom único para divulgar e gerar comissões em cada venda.",
                   bgColor: "from-purple-600 to-indigo-600",
                   image: "/cupom-novo.png"
-                },
-                { 
-                  t: "Link rastreável", 
-                  d: "Acompanhe em tempo real as vendas feitas pelo seu link pessoal.",
-                  bgColor: "from-blue-600 to-cyan-600",
-                  image: "/link-novo.png"
                 },
                 { 
                   t: "Kit de boas-vindas", 
