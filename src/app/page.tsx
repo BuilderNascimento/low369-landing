@@ -341,7 +341,7 @@ export default function Home() {
                         className="w-full h-full object-cover rounded-3xl"
                         controls
                         playsInline
-                        poster="/hero-bg.webp"
+                        poster="/VIDEO.jpg"
                       >
                         <source src="/video-teste.mp4" type="video/mp4" />
                         Seu navegador não suporta vídeos HTML5.
