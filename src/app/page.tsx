@@ -337,15 +337,59 @@ export default function Home() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/50 via-yellow-500/30 to-orange-500/50 rounded-3xl blur-sm animate-pulse" />
                     
                     <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl border border-orange-500/30 overflow-hidden">
-                      <video 
-                        className="w-full h-full object-cover rounded-3xl"
-                        controls
-                        playsInline
-                        poster="/VIDEO.jpg"
+                      {/* Imagem de capa com botão de play */}
+                      <div 
+                        id="video-poster" 
+                        className="w-full h-full cursor-pointer relative group"
+                        onClick={() => {
+                          const poster = document.getElementById('video-poster');
+                          const iframe = document.getElementById('youtube-video');
+                          if (poster && iframe) {
+                            poster.style.display = 'none';
+                            iframe.style.display = 'block';
+                          }
+                        }}
                       >
-                        <source src="/video-teste.mp4" type="video/mp4" />
-                        Seu navegador não suporta vídeos HTML5.
-                      </video>
+                        <img 
+                          src="/VIDEO.jpg" 
+                          alt="Vídeo LOW369" 
+                          className="w-full h-full object-cover rounded-3xl"
+                        />
+                        
+                        {/* Botão de play estilizado */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="relative">
+                            {/* Círculo de fundo com animação */}
+                            <div className="w-20 h-20 bg-orange-500/90 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300 animate-pulse">
+                              {/* Ícone de play */}
+                              <div className="w-0 h-0 border-l-[16px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+                            </div>
+                            
+                            {/* Efeito de ondas */}
+                            <div className="absolute inset-0 w-20 h-20 bg-orange-400/30 rounded-full animate-ping"></div>
+                            <div className="absolute inset-0 w-20 h-20 bg-orange-400/20 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+                          </div>
+                        </div>
+                        
+                        {/* Texto de instrução */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                          <div className="bg-black/70 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                            🎥 Clique para assistir
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Iframe do YouTube (inicialmente oculto) */}
+                      <iframe
+                        id="youtube-video"
+                        className="w-full h-full rounded-3xl"
+                        src="https://www.youtube.com/embed/Jna5ST89RNg?autoplay=1&rel=0&modestbranding=1"
+                        title="Vídeo LOW369"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{display: 'none'}}
+                      ></iframe>
                     </div>
                   </div>
                   
