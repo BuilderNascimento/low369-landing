@@ -1129,9 +1129,20 @@ export default function Home() {
                     const audiencia = data.get('audiencia');
                     const nicho = data.get('nicho');
                     
-                    // Validar que pelo menos 1 rede social foi preenchida
-                    if (!rede1 && !rede2 && !rede3) {
-                      setSubmitMessage('❌ Por favor, preencha pelo menos 1 rede social.');
+                    // Validar que pelo menos 1 rede social ou fonte de tráfego foi preenchida
+                    const outros_tipo = data.get('outros_tipo');
+                    const outros_link = data.get('outros_link');
+                    const outros_seguidores = data.get('outros_seguidores');
+                    
+                    if (!rede1 && !rede2 && !rede3 && !outros_tipo) {
+                      setSubmitMessage('❌ Por favor, preencha pelo menos 1 rede social ou fonte de tráfego.');
+                      setIsSubmitting(false);
+                      return;
+                    }
+                    
+                    // Validar campo outros se preenchido
+                    if (outros_tipo && outros_link && !outros_seguidores) {
+                      setSubmitMessage('❌ Por favor, preencha a quantidade de seguidores/audiência da fonte de tráfego.');
                       setIsSubmitting(false);
                       return;
                     }
@@ -1191,6 +1202,12 @@ export default function Home() {
                           [String(data.get('rede3'))]: {
                             link: String(data.get('link3')),
                             seguidores: String(data.get('seguidores3') || '')
+                          }
+                        }),
+                        ...(data.get('outros_tipo') && data.get('outros_link') && {
+                          [String(data.get('outros_tipo'))]: {
+                            link: String(data.get('outros_link')),
+                            seguidores: String(data.get('outros_seguidores') || '')
                           }
                         }),
                       },
@@ -1419,6 +1436,53 @@ export default function Home() {
                           className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
                           title="Use apenas números. Ex: 5k, 1.2k, 25000"
                         />
+                      </div>
+                    </div>
+                    
+                    {/* Campo Outros - Nova fonte de tráfego */}
+                    <div className="space-y-2 border-t border-purple-200 pt-4">
+                      <h4 className="text-sm font-bold text-purple-800 flex items-center gap-2">
+                        <span className="text-purple-600">🌐</span> Outras fontes de tráfego
+                        <span className="text-xs font-normal text-purple-600">(opcional)</span>
+                      </h4>
+                      
+                      <div className="space-y-2">
+                        <div className="grid grid-cols-3 gap-3">
+                          <select 
+                            name="outros_tipo" 
+                            className="h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                          >
+                            <option value="">Selecione</option>
+                            <option value="Blog">📝 Blog/Site</option>
+                            <option value="YouTube">📺 YouTube</option>
+                            <option value="Twitter">🐦 Twitter/X</option>
+                            <option value="LinkedIn">💼 LinkedIn</option>
+                            <option value="Twitch">🎮 Twitch</option>
+                            <option value="Discord">💬 Discord</option>
+                            <option value="Telegram">📱 Telegram</option>
+                            <option value="WhatsApp">💬 WhatsApp</option>
+                            <option value="Outros">🔗 Outros</option>
+                          </select>
+                          <input 
+                            name="outros_link" 
+                            placeholder="URL ou @perfil" 
+                            className="col-span-2 h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300" 
+                          />
+                        </div>
+                        <div>
+                          <label className="text-xs text-purple-700 font-semibold ml-1 mb-1 block">
+                            👥 Quantidade de seguidores/audiência
+                          </label>
+                          <input 
+                            name="outros_seguidores" 
+                            type="text"
+                            inputMode="numeric"
+                            pattern="[0-9.,kKmM]*"
+                            placeholder="Ex: 5k, 1.2k, 25k seguidores" 
+                            className="w-full h-12 rounded-2xl border-2 border-purple-200 bg-white px-4 text-gray-800 font-medium placeholder-gray-400 focus:border-purple-400 focus:ring-4 focus:ring-purple-400/20 transition-all duration-300"
+                            title="Use apenas números. Ex: 5k, 1.2k, 25000"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
